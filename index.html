@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="LMW Travel — Bespoke luxury travel experiences crafted for the discerning traveller.">
+  <title>LMW Travel — Crafting Journeys Beyond the Ordinary</title>
+
+  <!-- Stylesheets (order matters) -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/typography.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/nav-overlay.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/explore.css">
+
+  <!-- Preconnect for Google Fonts performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+
+  <!-- ======== Header ======== -->
+  <header class="header" role="banner">
+
+    <!-- SVG continuous notch outline (drawn by JS) -->
+    <div class="header__notch-wrap" aria-hidden="true">
+      <svg class="header__notch-svg" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path class="header__notch-path"/>
+      </svg>
+    </div>
+
+    <!-- Top bar: flex row — left | center | right -->
+    <div class="header__bar">
+
+      <a href="#contact" class="header__contact" aria-label="Get in touch with Lynn">
+        <svg class="header__contact-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="4" width="20" height="16" rx="2"/>
+          <path d="M22 4L12 13 2 4"/>
+        </svg>
+        <span class="header__contact-label">Contact</span>
+      </a>
+
+      <a href="#" class="header__notch" aria-label="LMW Travel — Home">
+        <span class="header__notch-label">LMW TRAVEL</span>
+      </a>
+
+      <button
+        class="hamburger"
+        type="button"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="nav-overlay"
+      >
+        <span class="hamburger__line" aria-hidden="true"></span>
+        <span class="hamburger__line" aria-hidden="true"></span>
+      </button>
+
+    </div>
+
+  </header>
+
+  <!-- ======== Navigation Overlay ======== -->
+  <div class="nav-overlay" id="nav-overlay" role="dialog" aria-modal="true" aria-label="Navigation menu">
+
+    <!-- Left Panel — contact info -->
+    <div class="nav-overlay__panel nav-overlay__panel--left">
+      <div class="nav-overlay__inner">
+        <div class="nav-overlay__brand-block">
+          <span class="nav-overlay__logo-title">LMW Travel</span>
+          <span class="nav-overlay__logo-subtitle">By: Lynn Megan Wijngaard</span>
+        </div>
+        <div class="nav-overlay__contact-block">
+          <h3 class="nav-overlay__contact-heading">Get in Touch</h3>
+          <p class="nav-overlay__contact-name">Lynn Megan Wijngaard</p>
+          <a href="mailto:info@lmwtravel.com" class="nav-overlay__contact-link">info@lmwtravel.com</a>
+          <a href="tel:+31612345678" class="nav-overlay__contact-link">+31 6 1234 5678</a>
+        </div>
+        <div class="nav-overlay__social-block">
+          <a href="#" class="nav-overlay__social-link" aria-label="Instagram">Instagram</a>
+          <a href="#" class="nav-overlay__social-link" aria-label="LinkedIn">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Center — photo of Lynn (hover swap via JS) -->
+    <div class="nav-overlay__photo">
+      <img src="assets/images/lynn photo for off canvas menu.jpg" alt="LMW Travel" class="nav-overlay__photo-img nav-overlay__photo-img--active" data-index="0" />
+      <img src="assets/images/what i do photo.jpg" alt="What I Do" class="nav-overlay__photo-img" data-index="1" />
+      <img src="assets/images/benefits.jpg" alt="Benefits & Partnerships" class="nav-overlay__photo-img" data-index="2" />
+      <img src="assets/images/Lynn about me photo.jpg" alt="About Me" class="nav-overlay__photo-img" data-index="3" />
+      <img src="assets/images/contact photo.jpg" alt="Contact" class="nav-overlay__photo-img" data-index="4" />
+    </div>
+
+    <!-- Right Panel — navigation + language -->
+    <div class="nav-overlay__panel nav-overlay__panel--right">
+      <div class="nav-overlay__inner">
+        <div class="nav-overlay__brand-block nav-overlay__brand-block--mobile">
+          <span class="nav-overlay__logo-title">LMW Travel</span>
+          <span class="nav-overlay__logo-subtitle">By: Lynn Megan Wijngaard</span>
+        </div>
+        <nav class="nav-overlay__list" role="navigation" aria-label="Main navigation">
+          <a href="#" class="nav-overlay__link" data-photo="3">About Me</a>
+          <a href="#" class="nav-overlay__link" data-photo="4">Contact</a>
+          <a href="#" class="nav-overlay__link" data-photo="1">What I Do</a>
+          <a href="#" class="nav-overlay__link" data-photo="2">Benefits &amp; Partnerships</a>
+        </nav>
+      </div>
+      <div class="nav-overlay__lang">
+        <button class="nav-overlay__lang-btn nav-overlay__lang-btn--active" data-lang="en">EN</button>
+        <button class="nav-overlay__lang-btn" data-lang="pt">PT</button>
+        <button class="nav-overlay__lang-btn" data-lang="nl">NL</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ======== Explore Gallery ======== -->
+  <div class="explore-gallery" id="explore-gallery" aria-label="Explore our services">
+
+    <div class="explore-gallery__track" id="explore-track">
+
+      <!-- Card 1 — About Me -->
+      <article class="explore-card" data-card="about">
+        <div class="explore-card__body">
+          <div class="explore-card__image" style="background-image: url('assets/images/Lynn about me photo.jpg')"></div>
+          <div class="explore-card__overlay"></div>
+          <span class="explore-card__index">01</span>
+          <div class="explore-card__content">
+            <h3 class="explore-card__title">About Me</h3>
+            <div class="explore-card__line"></div>
+            <button class="explore-card__btn" type="button">Discover</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2 — Contact -->
+      <article class="explore-card" data-card="contact">
+        <div class="explore-card__body">
+          <div class="explore-card__image" style="background-image: url('assets/images/contact photo.jpg')"></div>
+          <div class="explore-card__overlay"></div>
+          <span class="explore-card__index">02</span>
+          <div class="explore-card__content">
+            <h3 class="explore-card__title">Contact</h3>
+            <div class="explore-card__line"></div>
+            <button class="explore-card__btn" type="button">Discover</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3 — What I Do -->
+      <article class="explore-card" data-card="services">
+        <div class="explore-card__body">
+          <div class="explore-card__image" style="background-image: url('assets/images/what i do photo.jpg')"></div>
+          <div class="explore-card__overlay"></div>
+          <span class="explore-card__index">03</span>
+          <div class="explore-card__content">
+            <h3 class="explore-card__title">What I Do</h3>
+            <div class="explore-card__line"></div>
+            <button class="explore-card__btn" type="button">Discover</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 4 — Benefits & Partnerships -->
+      <article class="explore-card" data-card="benefits">
+        <div class="explore-card__body">
+          <div class="explore-card__image" style="background-image: url('assets/images/benefits.jpg')"></div>
+          <div class="explore-card__overlay"></div>
+          <span class="explore-card__index">04</span>
+          <div class="explore-card__content">
+            <h3 class="explore-card__title">Benefits &amp; Partnerships</h3>
+            <div class="explore-card__line"></div>
+            <button class="explore-card__btn" type="button">Discover</button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="explore-gallery__indicators" id="explore-indicators" aria-hidden="true">
+      <span class="explore-gallery__indicator explore-gallery__indicator--active"></span>
+      <span class="explore-gallery__indicator"></span>
+      <span class="explore-gallery__indicator"></span>
+      <span class="explore-gallery__indicator"></span>
+    </div>
+
+
+  </div>
+
+  <!-- ======== Main Content ======== -->
+  <main>
+
+    <!-- ======== Hero Section ======== -->
+    <section class="hero" aria-label="Welcome">
+
+      <div class="hero__image" aria-hidden="true"></div>
+      <div class="hero__overlay" aria-hidden="true"></div>
+
+      <div class="hero__content">
+        <h1 class="hero__headline">
+          <span class="hero__headline-line hero__headline-line--1">Personally Curated.</span>
+          <span class="hero__headline-line hero__headline-line--2">Exceptionally Yours.</span>
+        </h1>
+
+        <p class="hero__tagline">
+          Lynn Megan Wijngaard, your private travel agent for exceptional journeys.
+        </p>
+
+        <a href="#" class="hero__cta">Explore</a>
+      </div>
+
+      <div class="hero__lang">
+        <button class="hero__lang-btn hero__lang-btn--active" data-lang="en">EN</button>
+        <button class="hero__lang-btn" data-lang="pt">PT</button>
+        <button class="hero__lang-btn" data-lang="nl">NL</button>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Scripts (deferred) -->
+  <script src="js/nav.js" defer></script>
+  <script src="js/hero.js" defer></script>
+  <script src="js/explore.js" defer></script>
+
+</body>
+</html>
+

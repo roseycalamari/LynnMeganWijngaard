@@ -1,0 +1,586 @@
+/* ==========================================================================
+   LMW Travel — Navigation Overlay
+   Desktop: two panels + centered photo, full-width layout
+   Mobile: full-screen immersive menu
+   ========================================================================== */
+
+/* ---- Overlay Shell ---- */
+
+.nav-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 105;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.8s var(--ease-luxury),
+              visibility 0.8s var(--ease-luxury);
+}
+
+.nav-overlay--open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.nav-overlay:not(.nav-overlay--open) {
+  transition: opacity 0.5s var(--ease-exit),
+              visibility 0.5s var(--ease-exit);
+}
+
+/* ============================================================
+   MOBILE FIRST — full-screen immersive menu
+   ============================================================ */
+
+.nav-overlay__panel--left {
+  display: none;
+}
+
+.nav-overlay__photo {
+  display: none;
+}
+
+.nav-overlay__panel--right {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 var(--space-lg);
+  background-color: var(--color-stone);
+  background-image: url('../assets/images/background off canvas mnue 2.png');
+  background-size: cover;
+  background-position: center;
+  color: var(--color-cream);
+  overflow-y: auto;
+}
+
+/* ---- Inner wrapper ---- */
+
+.nav-overlay__inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: inherit;
+  text-align: inherit;
+  width: 100%;
+}
+
+/* ---- Mobile brand block (above nav links, hidden on desktop) ---- */
+
+.nav-overlay__brand-block--mobile {
+  margin-bottom: var(--space-xl);
+}
+
+@media (min-width: 1024px) {
+  .nav-overlay__brand-block.nav-overlay__brand-block--mobile {
+    display: none;
+  }
+}
+
+.nav-overlay--open .nav-overlay__brand-block--mobile {
+  opacity: 1;
+  transform: translate(0);
+  transition-delay: 0.1s;
+}
+
+/* ============================================================
+   MOBILE NAV LINKS — large, centered, filling the screen
+   ============================================================ */
+
+.nav-overlay__link {
+  font-family: var(--font-brand);
+  font-weight: 500;
+  color: var(--color-cream);
+  text-decoration: none;
+  display: block;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.5s var(--ease-entrance),
+              transform 0.5s var(--ease-entrance);
+  font-size: clamp(2rem, 8.5vw, 3rem);
+  line-height: 1.45;
+}
+
+.nav-overlay__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+}
+
+/* ---- Staggered entrance ---- */
+
+.nav-overlay--open .nav-overlay__link {
+  opacity: 1;
+  transform: translate(0);
+}
+
+.nav-overlay--open .nav-overlay__link:nth-child(1) { transition-delay: 0.2s; }
+.nav-overlay--open .nav-overlay__link:nth-child(2) { transition-delay: 0.28s; }
+.nav-overlay--open .nav-overlay__link:nth-child(3) { transition-delay: 0.36s; }
+.nav-overlay--open .nav-overlay__link:nth-child(4) { transition-delay: 0.44s; }
+
+/* ---- Instant hover dimming ---- */
+
+@media (hover: hover) {
+  .nav-overlay__list:hover .nav-overlay__link {
+    opacity: 0.35;
+    transition: opacity 0.08s ease;
+  }
+
+  .nav-overlay__list:hover .nav-overlay__link:hover {
+    opacity: 1;
+    transition: opacity 0.08s ease;
+  }
+}
+
+/* ---- Language selector ---- */
+
+.nav-overlay__lang {
+  display: flex;
+  gap: 1.4rem;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s var(--ease-entrance),
+              transform 0.5s var(--ease-entrance);
+  margin-top: var(--space-xl);
+  align-self: center;
+}
+
+.nav-overlay--open .nav-overlay__lang {
+  opacity: 1;
+  transform: translate(0);
+  transition-delay: 0.45s;
+}
+
+.nav-overlay__lang-btn {
+  font-family: var(--font-ui);
+  font-weight: 300;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-cream-40);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.15s ease;
+}
+
+.nav-overlay__lang-btn--active {
+  color: var(--color-cream);
+  font-weight: 400;
+}
+
+@media (hover: hover) {
+  .nav-overlay__lang-btn:hover {
+    color: var(--color-cream-75);
+  }
+}
+
+/* ============================================================
+   TABLET (768px) — slightly larger text
+   ============================================================ */
+
+@media (min-width: 768px) {
+  .nav-overlay__link {
+    font-size: clamp(3rem, 7vw, 4rem);
+    line-height: 1.5;
+  }
+
+  .nav-overlay__panel--right {
+    padding: var(--space-xl) var(--space-xl);
+  }
+}
+
+/* ============================================================
+   DESKTOP (1024px) — two panels + centered photo
+   ============================================================ */
+
+@media (min-width: 1024px) {
+  .nav-overlay {
+    --photo-w: 300px;
+    --photo-h: 440px;
+    --photo-gutter: 56px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  /* Desktop: add breathing room between menu items */
+  .nav-overlay__list {
+    gap: var(--space-sm);
+  }
+
+  /* ---- Left Panel ---- */
+
+  .nav-overlay__panel--left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 50%;
+    flex-shrink: 0;
+    padding: var(--space-2xl) var(--space-xl);
+    padding-right: calc(var(--photo-w) / 2 + var(--photo-gutter));
+    color: var(--color-cream);
+    background-color: var(--color-stone);
+    background-image: url('../assets/images/background off canvas menu.png');
+    background-size: cover;
+    background-position: center;
+    overflow-y: auto;
+  }
+
+  .nav-overlay__panel--left .nav-overlay__inner {
+    gap: var(--space-xl);
+    max-width: none;
+  }
+
+  /* ---- Photo ---- */
+
+  .nav-overlay__photo {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: var(--photo-w);
+    height: var(--photo-h);
+    z-index: 2;
+    pointer-events: none;
+    border-radius: clamp(1.25rem, 2.2vw, 2rem);
+    overflow: hidden;
+  }
+
+  /* ---- Right Panel ---- */
+
+  .nav-overlay__panel--right {
+    position: relative;
+    width: 50%;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    padding: var(--space-2xl) var(--space-xl);
+    padding-left: calc(var(--photo-w) / 2 + var(--photo-gutter));
+    background-color: var(--color-stone);
+    background-image: url('../assets/images/background off canvas mnue 2.png');
+    background-size: cover;
+    background-position: center;
+    overflow-y: auto;
+    overflow-x: hidden; /* keep long labels inside the panel */
+  }
+
+  .nav-overlay__inner {
+    max-width: none;
+  }
+
+  /* ---- Desktop nav links — large serif ---- */
+
+  .nav-overlay__link {
+    /* Slightly smaller max size so long labels wrap inside the right panel */
+    font-size: clamp(2.4rem, 3.6vw, 3.8rem);
+    line-height: 1.5;
+    transform: none; /* don't push text off-screen */
+    /* Desktop: keep the hover/click hit-area tight to the text. */
+    display: inline-block;
+    width: auto;
+    align-self: flex-start;
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere; /* allow long items to wrap instead of overflowing */
+  }
+
+  /* Tighten line spacing for the wrapped second item ("Benefits & Partnerships") */
+  .nav-overlay__list .nav-overlay__link:nth-child(2) {
+    line-height: 1.15;
+  }
+
+  .nav-overlay--open .nav-overlay__link {
+    transform: translate(0);
+  }
+
+  /* ---- Language — pinned bottom-right ---- */
+
+  .nav-overlay__lang {
+    position: absolute;
+    bottom: var(--space-xl);
+    right: var(--space-xl);
+    margin-top: 0;
+    align-self: auto;
+    transform: translateX(30px);
+  }
+}
+
+/* ============================================================
+   LARGE DESKTOP (1440px) — even bigger
+   ============================================================ */
+
+@media (min-width: 1440px) {
+  .nav-overlay {
+    --photo-w: 340px;
+    --photo-h: 500px;
+    --photo-gutter: 64px;
+  }
+
+  .nav-overlay__panel--left {
+    padding: var(--space-2xl) var(--space-2xl);
+    padding-right: calc(var(--photo-w) / 2 + var(--photo-gutter));
+  }
+
+  .nav-overlay__panel--right {
+    padding: var(--space-2xl) var(--space-2xl);
+    padding-left: calc(var(--photo-w) / 2 + var(--photo-gutter));
+  }
+
+  .nav-overlay__link {
+    font-size: clamp(2.9rem, 3.3vw, 4.2rem);
+    line-height: 1.45;
+  }
+
+  .nav-overlay__lang {
+    bottom: var(--space-2xl);
+    right: var(--space-2xl);
+  }
+}
+
+/* ============================================================
+   ULTRA-WIDE (1800px)
+   ============================================================ */
+
+@media (min-width: 1800px) {
+  .nav-overlay {
+    --photo-w: 380px;
+    --photo-h: 560px;
+    --photo-gutter: 72px;
+  }
+
+  .nav-overlay__link {
+    font-size: clamp(3.6rem, 3.2vw, 5.2rem);
+  }
+}
+
+/* ============================================================
+   Photo Images — crossfade + subtle zoom animation
+   ============================================================ */
+
+.nav-overlay__photo-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.08);
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.nav-overlay__photo-img--active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ============================================================
+   Content Entrance Animations
+   ============================================================ */
+
+/* ---- Left panel content ---- */
+
+.nav-overlay__brand-block,
+.nav-overlay__contact-block,
+.nav-overlay__social-block {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.5s var(--ease-entrance),
+              transform 0.5s var(--ease-entrance);
+}
+
+.nav-overlay--open .nav-overlay__brand-block {
+  opacity: 1;
+  transform: translate(0);
+  transition-delay: 0.2s;
+}
+
+.nav-overlay--open .nav-overlay__contact-block {
+  opacity: 1;
+  transform: translate(0);
+  transition-delay: 0.3s;
+}
+
+.nav-overlay--open .nav-overlay__social-block {
+  opacity: 1;
+  transform: translate(0);
+  transition-delay: 0.4s;
+}
+
+@media (min-width: 1024px) {
+  .nav-overlay__brand-block,
+  .nav-overlay__contact-block,
+  .nav-overlay__social-block {
+    transform: translateX(-60px);
+  }
+}
+
+/* ---- Close: slide back out ---- */
+
+.nav-overlay:not(.nav-overlay--open) .nav-overlay__brand-block,
+.nav-overlay:not(.nav-overlay--open) .nav-overlay__contact-block,
+.nav-overlay:not(.nav-overlay--open) .nav-overlay__social-block,
+.nav-overlay:not(.nav-overlay--open) .nav-overlay__lang,
+.nav-overlay:not(.nav-overlay--open) .nav-overlay__link {
+  transition-delay: 0s !important;
+  transition-duration: 0.3s;
+  transition-timing-function: var(--ease-exit);
+}
+
+.nav-overlay:not(.nav-overlay--open) .nav-overlay__photo-img {
+  transition-delay: 0s !important;
+  transition-duration: 0.3s;
+}
+
+/* ============================================================
+   Component Styles
+   ============================================================ */
+
+/* ---- Brand Block ---- */
+
+.nav-overlay__brand-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.nav-overlay__logo-title {
+  font-family: var(--font-brand);
+  font-weight: 500;
+  font-size: 1.8rem;
+  letter-spacing: 0.4em;
+  text-indent: 0.4em;
+  text-transform: uppercase;
+  color: var(--color-cream);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+@media (min-width: 1440px) {
+  .nav-overlay__logo-title {
+    font-size: 2rem;
+  }
+}
+
+.nav-overlay__logo-subtitle {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-indent: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-cream-75);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+@media (min-width: 1440px) {
+  .nav-overlay__logo-subtitle {
+    font-size: 0.72rem;
+  }
+}
+
+/* ---- Contact Block ---- */
+
+.nav-overlay__contact-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.nav-overlay__contact-heading {
+  font-family: var(--font-brand);
+  font-weight: 500;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  text-indent: 0.22em;
+  color: var(--color-cream);
+  margin-bottom: 0.8rem;
+}
+
+@media (min-width: 1440px) {
+  .nav-overlay__contact-heading {
+    font-size: 1.1rem;
+  }
+}
+
+.nav-overlay__contact-name {
+  font-family: var(--font-ui);
+  font-weight: 400;
+  font-size: 1.15rem;
+  color: var(--color-cream);
+}
+
+@media (min-width: 1440px) {
+  .nav-overlay__contact-name {
+    font-size: 1.25rem;
+  }
+}
+
+.nav-overlay__contact-link {
+  font-family: var(--font-ui);
+  font-weight: 300;
+  font-size: 1.1rem;
+  color: var(--color-cream);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(246, 233, 207, 0.35);
+  transition: text-decoration-color 0.15s ease;
+}
+
+@media (min-width: 1440px) {
+  .nav-overlay__contact-link {
+    font-size: 1.2rem;
+  }
+}
+
+@media (hover: hover) {
+  .nav-overlay__contact-link:hover {
+    text-decoration-color: var(--color-cream);
+  }
+}
+
+/* ---- Social Block ---- */
+
+.nav-overlay__social-block {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.nav-overlay__social-link {
+  font-family: var(--font-ui);
+  font-weight: 300;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-cream);
+  text-decoration: none;
+  opacity: 0.65;
+  transition: opacity 0.15s ease;
+}
+
+@media (min-width: 1440px) {
+  .nav-overlay__social-link {
+    font-size: 0.9rem;
+  }
+}
+
+@media (hover: hover) {
+  .nav-overlay__social-link:hover {
+    opacity: 1;
+  }
+}

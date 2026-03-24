@@ -1,0 +1,42 @@
+/* ==========================================================================
+   LMW Travel — Typography: Font Imports & Type Scale
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400&family=Poppins:wght@300;400&display=swap');
+
+@font-face {
+  font-family: 'PP Hatton';
+  src: url('../assets/fonts/pp-hatton-medium-500.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: var(--font-ui);
+  font-weight: 300;
+  color: var(--color-cream);
+}
+
+.t-display {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: var(--tracking-display);
+}
+
+.t-ui {
+  font-family: var(--font-ui);
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-ultra);
+}
+
+.t-caption {
+  font-family: var(--font-ui);
+  font-weight: 300;
+  font-size: var(--text-caption);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-ultra);
+}
+

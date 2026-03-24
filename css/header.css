@@ -1,0 +1,376 @@
+/* ==========================================================================
+   LMW Travel — Header
+   Flex-based bar: Contact (left) | Notch (center) | Menu (right)
+   Guaranteed no overlap at any viewport width (320px → 2560px+).
+   ========================================================================== */
+
+/* ---- Header Shell ---- */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 200;
+  pointer-events: none;
+}
+
+/* ---- Top Bar — flex row ---- */
+
+.header__bar {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 var(--space-sm);
+  pointer-events: none;
+}
+
+@media (min-width: 768px) {
+  .header__bar {
+    padding: 0 var(--space-md);
+  }
+}
+
+@media (min-width: 1024px) {
+  .header__bar {
+    padding: 0 var(--space-xl);
+  }
+}
+
+@media (min-width: 1440px) {
+  .header__bar {
+    padding: 0 var(--space-2xl);
+  }
+}
+
+/* ---- SVG — solid top rail + notch (one filled shape) ---- */
+
+.header__notch-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--notch-height-mobile);
+  pointer-events: none;
+  z-index: 109;
+  opacity: 0;
+  animation: fadeIn var(--dur-mid) var(--ease-entrance) 0.3s forwards;
+}
+
+@media (min-width: 1024px) {
+  .header__notch-wrap {
+    height: var(--notch-height);
+  }
+}
+
+.header__notch-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.header__notch-path {
+  fill: var(--color-stone);
+  stroke: none;
+}
+
+/* ---- Contact Button (left slot) ---- */
+
+.header__contact {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--btn-height);
+  margin-top: calc(var(--notch-height-mobile) - var(--btn-height));
+  padding: 0 0.7em;
+  pointer-events: auto;
+  -webkit-tap-highlight-color: transparent;
+  text-decoration: none;
+  background: var(--btn-bg);
+  border: 1px solid var(--btn-border);
+  border-radius: var(--btn-radius);
+  transition: background var(--dur-fast) var(--ease-luxury),
+              border-color var(--dur-fast) var(--ease-luxury);
+  opacity: 0;
+  animation: fadeIn var(--dur-mid) var(--ease-entrance) 0.5s forwards;
+}
+
+@supports (backdrop-filter: blur(1px)) {
+  .header__contact {
+    backdrop-filter: blur(12px) saturate(140%);
+    -webkit-backdrop-filter: blur(12px) saturate(140%);
+  }
+}
+
+@media (min-width: 768px) {
+  .header__contact {
+    padding: 0 1em;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header__contact {
+    height: var(--btn-height-desktop);
+    margin-top: calc(var(--notch-height) - var(--btn-height-desktop));
+    padding: 0 1.3em;
+  }
+}
+
+@media (hover: hover) {
+  .header__contact:hover {
+    background: var(--btn-bg-hover);
+    border-color: rgba(246, 233, 207, 0.45);
+  }
+}
+
+.header__contact-icon {
+  width: 18px;
+  height: 18px;
+  color: var(--color-cream);
+}
+
+@media (min-width: 768px) {
+  .header__contact-icon {
+    display: none;
+  }
+}
+
+.header__contact-label {
+  font-family: var(--font-brand);
+  font-weight: 500;
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  text-indent: 0.12em;
+  color: var(--color-cream);
+  white-space: nowrap;
+  line-height: 1;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .header__contact-label {
+    display: block;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-indent: 0.14em;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header__contact-label {
+    font-size: 0.82rem;
+  }
+}
+
+/* ---- Centered Logo Notch (label floats over the SVG-filled shape) ---- */
+
+.header__notch {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(150px, 42vw, var(--notch-width-mobile));
+  height: var(--notch-height-mobile);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+  z-index: 110;
+  -webkit-tap-highlight-color: transparent;
+  text-decoration: none;
+  background: none;
+  opacity: 0;
+  animation: notchDrop var(--dur-slow) var(--ease-entrance) 0.3s forwards;
+}
+
+@media (min-width: 1024px) {
+  .header__notch {
+    width: var(--notch-width);
+    height: var(--notch-height);
+  }
+}
+
+.header__notch-label {
+  font-family: var(--font-brand);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.78rem;
+  letter-spacing: 0.4em;
+  text-indent: 0.4em;
+  color: var(--color-cream);
+  white-space: nowrap;
+  line-height: 1;
+  padding-top: var(--rail-weight);
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  .header__notch-label {
+    font-size: 0.85rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header__notch-label {
+    font-size: 1.05rem;
+  }
+}
+
+/* ---- Menu Button (right slot) ---- */
+
+.hamburger {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: var(--btn-height);
+  margin-top: calc(var(--notch-height-mobile) - var(--btn-height));
+  pointer-events: auto;
+  -webkit-tap-highlight-color: transparent;
+  background: var(--btn-bg);
+  border: 1px solid var(--btn-border);
+  border-radius: var(--btn-radius);
+  transition: background var(--dur-fast) var(--ease-luxury),
+              border-color var(--dur-fast) var(--ease-luxury);
+  opacity: 0;
+  animation: fadeIn var(--dur-mid) var(--ease-entrance) 0.5s forwards;
+}
+
+@supports (backdrop-filter: blur(1px)) {
+  .hamburger {
+    backdrop-filter: blur(12px) saturate(140%);
+    -webkit-backdrop-filter: blur(12px) saturate(140%);
+  }
+}
+
+@media (min-width: 1024px) {
+  .hamburger {
+    width: 56px;
+    height: var(--btn-height-desktop);
+    margin-top: calc(var(--notch-height) - var(--btn-height-desktop));
+    gap: 6px;
+  }
+}
+
+@media (hover: hover) {
+  .hamburger:hover {
+    background: var(--btn-bg-hover);
+    border-color: rgba(246, 233, 207, 0.45);
+  }
+}
+
+.hamburger__line {
+  display: block;
+  width: 18px;
+  height: 1px;
+  background: var(--color-cream);
+  transition: transform var(--dur-fast) var(--ease-luxury),
+              opacity var(--dur-fast) var(--ease-luxury);
+}
+
+@media (min-width: 1024px) {
+  .hamburger__line {
+    width: 20px;
+  }
+}
+
+.hamburger--active .hamburger__line:first-child {
+  transform: translateY(3px) rotate(45deg);
+}
+
+.hamburger--active .hamburger__line:last-child {
+  transform: translateY(-3px) rotate(-45deg);
+}
+
+/* ---- Lock final state after entrance animation, enable transitions ---- */
+
+.header__notch-wrap.anim-done,
+.header__contact.anim-done,
+.hamburger.anim-done {
+  animation: none !important;
+  opacity: 1;
+}
+
+.header__notch.anim-done {
+  animation: none !important;
+  opacity: 1;
+  transform: translateX(-50%);
+}
+
+/* ---- Slide header chrome off-screen when menu is open ---- */
+
+.header__notch-wrap,
+.header__contact,
+.header__notch {
+  transition: transform 0.6s var(--ease-entrance) 0.25s,
+              opacity 0.6s var(--ease-entrance) 0.25s;
+}
+
+.header--menu-open .header__notch-wrap,
+.header--menu-open .header__contact {
+  transform: translateY(calc(-1 * var(--notch-height-mobile) - 20px));
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.3s var(--ease-exit),
+              opacity 0.3s var(--ease-exit);
+}
+
+.header--menu-open .header__notch {
+  transform: translateX(-50%) translateY(calc(-1 * var(--notch-height-mobile) - 20px));
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.3s var(--ease-exit),
+              opacity 0.3s var(--ease-exit);
+}
+
+@media (min-width: 1024px) {
+  .header--menu-open .header__notch-wrap,
+  .header--menu-open .header__contact {
+    transform: translateY(calc(-1 * var(--notch-height) - 20px));
+  }
+
+  .header--menu-open .header__notch {
+    transform: translateX(-50%) translateY(calc(-1 * var(--notch-height) - 20px));
+  }
+}
+
+/* ---- Slide header off-screen when a card is expanded fullscreen ---- */
+
+.header--card-expanded .header__notch-wrap,
+.header--card-expanded .header__contact {
+  transform: translateY(calc(-1 * var(--notch-height-mobile) - 20px));
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.4s var(--ease-exit),
+              opacity 0.4s var(--ease-exit);
+}
+
+.header--card-expanded .header__notch {
+  transform: translateX(-50%) translateY(calc(-1 * var(--notch-height-mobile) - 20px));
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.4s var(--ease-exit),
+              opacity 0.4s var(--ease-exit);
+}
+
+@media (min-width: 1024px) {
+  .header--card-expanded .header__notch-wrap,
+  .header--card-expanded .header__contact {
+    transform: translateY(calc(-1 * var(--notch-height) - 20px));
+  }
+
+  .header--card-expanded .header__notch {
+    transform: translateX(-50%) translateY(calc(-1 * var(--notch-height) - 20px));
+  }
+}
+

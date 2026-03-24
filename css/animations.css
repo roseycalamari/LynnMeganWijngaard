@@ -1,0 +1,98 @@
+/* ==========================================================================
+   LMW Travel — Keyframes, Transitions, Entrance Animations
+   ========================================================================== */
+
+/* ---- Ken Burns — slow breathing scale ---- */
+
+@keyframes kenBurns {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.06);
+  }
+}
+
+/* ---- Fade + Slide Up — hero text entrance ---- */
+
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateX(var(--fade-x, 0)) translateY(24px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(var(--fade-x, 0)) translateY(0);
+  }
+}
+
+/* ---- Notch Drop — header notch entrance ---- */
+
+@keyframes notchDrop {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* ---- Fade In — generic ---- */
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* ---- Reduced Motion ---- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+  }
+
+  .hero__image {
+    transform: scale(1) !important;
+  }
+
+  .hero__headline-line,
+  .hero__tagline,
+  .hero__cta {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .nav-overlay__link {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .nav-overlay__panel,
+  .nav-overlay__photo {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .header__notch {
+    opacity: 1 !important;
+    transform: translateX(-50%) !important;
+  }
+
+  .hamburger,
+  .header__contact {
+    opacity: 1 !important;
+  }
+}
+
