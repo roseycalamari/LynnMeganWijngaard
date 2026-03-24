@@ -10,6 +10,11 @@
   height: 100svh;
   overflow: hidden;
   background-color: var(--color-ink);
+  opacity: 0;
+}
+
+.hero--ready {
+  opacity: 1;
 }
 
 /* ---- Hero Image (Ken Burns container) ---- */

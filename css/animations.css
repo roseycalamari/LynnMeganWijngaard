@@ -63,6 +63,14 @@
     transition-delay: 0ms !important;
   }
 
+  .hero {
+    opacity: 1 !important;
+  }
+
+  .header {
+    visibility: visible !important;
+  }
+
   .hero__image {
     transform: scale(1) !important;
   }

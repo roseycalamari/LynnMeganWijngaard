@@ -19,6 +19,9 @@
   <!-- Preconnect for Google Fonts performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Fallback: show hero + header immediately if JS is disabled -->
+  <noscript><style>.hero{opacity:1!important}.header{visibility:visible!important}</style></noscript>
 </head>
 <body>
 
@@ -221,6 +224,18 @@
     </section>
 
   </main>
+
+  <!-- Reveal hero + header after overlay is composited (prevents raw-image flash) -->
+  <script>
+    requestAnimationFrame(function(){
+      requestAnimationFrame(function(){
+        var h = document.querySelector('.hero');
+        var hd = document.querySelector('.header');
+        if (h) h.classList.add('hero--ready');
+        if (hd) hd.classList.add('header--ready');
+      });
+    });
+  </script>
 
   <!-- Scripts (deferred) -->
   <script src="js/nav.js" defer></script>
