@@ -9,6 +9,7 @@
   var cta = document.querySelector('.hero__cta');
   var gallery = document.getElementById('explore-gallery');
   var track = document.getElementById('explore-track');
+  var backBtn = document.getElementById('explore-back');
   var indicators = document.querySelectorAll('.explore-gallery__indicator');
   if (!cta || !gallery || !track) return;
 
@@ -37,6 +38,15 @@
     }
   });
 
+  /* ---- Go Back button ---- */
+
+  if (backBtn) {
+    backBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      closeExplore();
+    });
+  }
+
   /* ---- Keyboard: Escape ---- */
 
   document.addEventListener('keydown', function (e) {
@@ -47,9 +57,30 @@
 
   /* ---- Click backdrop to close gallery ---- */
 
+  var centerWrap = gallery.querySelector('.explore-gallery__center');
   gallery.addEventListener('click', function (e) {
-    if (e.target === gallery || e.target === track) {
+    if (e.target === gallery || e.target === track || e.target === centerWrap) {
       closeExplore();
+    }
+  });
+
+  /* ---- Discover button navigation ---- */
+
+  var cardRoutes = {
+    about: 'about.html',
+    contact: 'contact.html',
+    services: 'whatido.html',
+    benefits: 'benefits.html'
+  };
+
+  cards.forEach(function (card) {
+    var btn = card.querySelector('.explore-card__btn');
+    if (!btn) return;
+    var key = card.getAttribute('data-card');
+    if (key && cardRoutes[key]) {
+      btn.addEventListener('click', function () {
+        window.location.href = cardRoutes[key];
+      });
     }
   });
 

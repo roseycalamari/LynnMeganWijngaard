@@ -27,6 +27,15 @@
   pointer-events: auto;
 }
 
+/* ---- Centering Wrapper ---- */
+
+.explore-gallery__center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
 /* ---- Card Track ---- */
 
 .explore-gallery__track {
@@ -690,6 +699,69 @@ body:not(.explore-active) .explore-gallery__indicators {
   background: rgba(246, 233, 207, 0.6);
 }
 
+/* ---- Go Back Button ---- */
+
+.explore-gallery__back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-brand);
+  font-weight: 500;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  text-indent: 0.18em;
+  color: var(--color-cream);
+  margin-top: var(--space-lg);
+  padding: 0.9em 2.4em;
+  background: var(--btn-bg);
+  border: 1px solid var(--btn-border);
+  border-radius: var(--btn-radius);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s var(--ease-entrance),
+              transform 0.5s var(--ease-entrance),
+              background var(--dur-fast) var(--ease-luxury),
+              border-color var(--dur-fast) var(--ease-luxury);
+}
+
+@supports (backdrop-filter: blur(1px)) {
+  .explore-gallery__back {
+    backdrop-filter: blur(12px) saturate(140%);
+    -webkit-backdrop-filter: blur(12px) saturate(140%);
+  }
+}
+
+.explore-active .explore-gallery__back {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.5s;
+}
+
+body:not(.explore-active) .explore-gallery__back {
+  transition-delay: 0s;
+  transition-duration: 0.3s;
+}
+
+@media (hover: hover) {
+  .explore-gallery__back:hover {
+    background: var(--btn-bg-hover);
+    border-color: rgba(246, 233, 207, 0.45);
+  }
+}
+
+.explore-gallery__back:active {
+  transform: translateY(1px);
+}
+
+@media (min-width: 1024px) {
+  .explore-gallery__back {
+    font-size: 0.85rem;
+  }
+}
+
 /* ---- Mobile overrides ---- */
 
 @media (max-width: 767px) {
@@ -713,6 +785,11 @@ body:not(.explore-active) .explore-gallery__indicators {
   .explore-gallery__lang {
     flex-shrink: 0;
     margin-top: var(--space-sm);
+  }
+
+  .explore-gallery__back {
+    flex-shrink: 0;
+    margin-top: var(--space-md);
   }
 
   .explore-card__title {
