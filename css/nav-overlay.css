@@ -294,8 +294,8 @@
     overflow-wrap: anywhere; /* allow long items to wrap instead of overflowing */
   }
 
-  /* Tighten line spacing for the wrapped second item ("Benefits & Partnerships") */
-  .nav-overlay__list .nav-overlay__link:nth-child(2) {
+  /* Tighten line spacing for the wrapped third item ("Benefits & Partnerships") */
+  .nav-overlay__list .nav-overlay__link:nth-child(3) {
     line-height: 1.15;
   }
 

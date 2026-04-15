@@ -541,16 +541,6 @@
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
 }
 
-.about-values__pillar-desc {
-  font-family: var(--font-ui);
-  font-weight: 300;
-  font-size: clamp(0.85rem, 1.3vw, 1rem);
-  line-height: 1.7;
-  color: var(--color-cream-75);
-  max-width: 32ch;
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
-}
-
 /* ==========================================================================
    CTA Band — full-width, textured background 1
    ========================================================================== */

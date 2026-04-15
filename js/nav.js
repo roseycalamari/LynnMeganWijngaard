@@ -24,15 +24,19 @@
 
   const notchPath = document.querySelector('.header__notch-path');
   const notchEl   = document.querySelector('.header__notch');
+  const notchWrap = document.querySelector('.header__notch-wrap');
 
   function drawNotchLine() {
     if (!notchPath || !notchEl) return;
 
-    const vw = window.innerWidth;
+    const wrapW = notchWrap ? notchWrap.getBoundingClientRect().width : 0;
+    const railW = wrapW > 0 ? wrapW : window.innerWidth;
     const rect = notchEl.getBoundingClientRect();
-    const x1 = rect.left;
-    const x2 = rect.right;
-    const h  = rect.height;
+    const wMeasured = notchEl.offsetWidth || rect.width;
+    const h = rect.height;
+    const mid = railW * 0.5;
+    const x1 = wMeasured > 0 ? mid - wMeasured * 0.5 : rect.left;
+    const x2 = wMeasured > 0 ? mid + wMeasured * 0.5 : rect.right;
     const rb = 8;
     const rt = 10;
     const t  = parseFloat(getComputedStyle(document.documentElement)
@@ -43,7 +47,7 @@
     // rb = convex radius at notch bottom corners
     const d = [
       `M 0 0`,
-      `H ${vw}`,
+      `H ${railW}`,
       `V ${t}`,
       `H ${x2 + rt}`,
       `Q ${x2} ${t} ${x2} ${t + rt}`,
@@ -60,24 +64,68 @@
     notchPath.setAttribute('d', d);
   }
 
+  let drawRafPending = false;
+
+  function scheduleDrawNotchLine() {
+    if (drawRafPending) return;
+    drawRafPending = true;
+    requestAnimationFrame(function () {
+      drawNotchLine();
+      drawRafPending = false;
+    });
+  }
+
+  function drawNotchLineSettled() {
+    requestAnimationFrame(function () {
+      drawNotchLine();
+      requestAnimationFrame(drawNotchLine);
+    });
+  }
+
   drawNotchLine();
+  drawNotchLineSettled();
+
+  window.addEventListener('load', drawNotchLineSettled, { once: true });
+
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(drawNotchLineSettled);
+  }
+
+  if (notchWrap && typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(function () {
+      scheduleDrawNotchLine();
+    }).observe(notchWrap);
+  }
+
+  if (notchEl && typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(function () {
+      scheduleDrawNotchLine();
+    }).observe(notchEl);
+  }
+
+  if (window.visualViewport) {
+    window.visualViewport.addEventListener('resize', scheduleDrawNotchLine, { passive: true });
+  }
 
   /* Replace entrance animations with a class that holds final state,
      so CSS transitions can take over for menu open/close */
   document.querySelectorAll('.header__notch, .header__notch-wrap, .header__contact, .hamburger').forEach((el) => {
     el.addEventListener('animationend', () => {
       el.classList.add('anim-done');
+      if (el === notchEl) {
+        scheduleDrawNotchLine();
+      }
     }, { once: true });
   });
 
   let resizeTicking = false;
   window.addEventListener('resize', () => {
     if (!resizeTicking) {
+      resizeTicking = true;
       window.requestAnimationFrame(() => {
         drawNotchLine();
         resizeTicking = false;
       });
-      resizeTicking = true;
     }
   }, { passive: true });
 

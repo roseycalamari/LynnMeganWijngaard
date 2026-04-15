@@ -31,11 +31,11 @@
 @keyframes notchDrop {
   0% {
     opacity: 0;
-    transform: translateX(-50%) translateY(-100%);
+    transform: translateY(-100%);
   }
   100% {
     opacity: 1;
-    transform: translateX(-50%) translateY(0);
+    transform: translateY(0);
   }
 }
 
@@ -76,7 +76,6 @@
   }
 
   .hero__headline-line,
-  .hero__tagline,
   .hero__cta {
     opacity: 1 !important;
     transform: none !important;
@@ -95,7 +94,7 @@
 
   .header__notch {
     opacity: 1 !important;
-    transform: translateX(-50%) !important;
+    transform: none !important;
   }
 
   .hamburger,

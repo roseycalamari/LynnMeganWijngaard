@@ -174,20 +174,39 @@
   }
 }
 
-/* ---- Centered Logo Notch (label floats over the SVG-filled shape) ---- */
+/* ---- Logo notch: full-width flex row centers the link (no translateX-50%) ----
+   Horizontal centering uses flexbox on a fixed full-bleed shell so we never
+   depend on transform + left:50%, which can fail on first paint in some browsers.
+   ---- */
+
+.header__notch-center {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: var(--notch-height-mobile);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 110;
+  pointer-events: none;
+}
+
+@media (min-width: 1024px) {
+  .header__notch-center {
+    height: var(--notch-height);
+  }
+}
 
 .header__notch {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: clamp(150px, 42vw, var(--notch-width-mobile));
-  height: var(--notch-height-mobile);
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: clamp(150px, 42vw, var(--notch-width-mobile));
+  height: var(--notch-height-mobile);
   pointer-events: auto;
-  z-index: 110;
   -webkit-tap-highlight-color: transparent;
   text-decoration: none;
   background: none;
@@ -309,29 +328,22 @@
 .header__notch.anim-done {
   animation: none !important;
   opacity: 1;
-  transform: translateX(-50%);
+  transform: none;
 }
 
 /* ---- Slide header chrome off-screen when menu is open ---- */
 
 .header__notch-wrap,
 .header__contact,
-.header__notch {
+.header__notch-center {
   transition: transform 0.6s var(--ease-entrance) 0.25s,
               opacity 0.6s var(--ease-entrance) 0.25s;
 }
 
 .header--menu-open .header__notch-wrap,
-.header--menu-open .header__contact {
+.header--menu-open .header__contact,
+.header--menu-open .header__notch-center {
   transform: translateY(calc(-1 * var(--notch-height-mobile) - 20px));
-  opacity: 0;
-  pointer-events: none;
-  transition: transform 0.3s var(--ease-exit),
-              opacity 0.3s var(--ease-exit);
-}
-
-.header--menu-open .header__notch {
-  transform: translateX(-50%) translateY(calc(-1 * var(--notch-height-mobile) - 20px));
   opacity: 0;
   pointer-events: none;
   transition: transform 0.3s var(--ease-exit),
@@ -340,28 +352,18 @@
 
 @media (min-width: 1024px) {
   .header--menu-open .header__notch-wrap,
-  .header--menu-open .header__contact {
+  .header--menu-open .header__contact,
+  .header--menu-open .header__notch-center {
     transform: translateY(calc(-1 * var(--notch-height) - 20px));
-  }
-
-  .header--menu-open .header__notch {
-    transform: translateX(-50%) translateY(calc(-1 * var(--notch-height) - 20px));
   }
 }
 
 /* ---- Slide header off-screen when a card is expanded fullscreen ---- */
 
 .header--card-expanded .header__notch-wrap,
-.header--card-expanded .header__contact {
+.header--card-expanded .header__contact,
+.header--card-expanded .header__notch-center {
   transform: translateY(calc(-1 * var(--notch-height-mobile) - 20px));
-  opacity: 0;
-  pointer-events: none;
-  transition: transform 0.4s var(--ease-exit),
-              opacity 0.4s var(--ease-exit);
-}
-
-.header--card-expanded .header__notch {
-  transform: translateX(-50%) translateY(calc(-1 * var(--notch-height-mobile) - 20px));
   opacity: 0;
   pointer-events: none;
   transition: transform 0.4s var(--ease-exit),
@@ -370,12 +372,14 @@
 
 @media (min-width: 1024px) {
   .header--card-expanded .header__notch-wrap,
-  .header--card-expanded .header__contact {
+  .header--card-expanded .header__contact,
+  .header--card-expanded .header__notch-center {
     transform: translateY(calc(-1 * var(--notch-height) - 20px));
   }
+}
 
-  .header--card-expanded .header__notch {
-    transform: translateX(-50%) translateY(calc(-1 * var(--notch-height) - 20px));
-  }
+.header--menu-open .header__notch,
+.header--card-expanded .header__notch {
+  pointer-events: none;
 }
 

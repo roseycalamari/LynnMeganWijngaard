@@ -104,38 +104,6 @@
   animation: fadeSlideUp var(--dur-slow) var(--ease-entrance) var(--delay-line2) forwards;
 }
 
-/* ---- Tagline ---- */
-
-.hero__tagline {
-  font-family: var(--font-ui);
-  font-weight: 300;
-  font-size: 0.6rem;
-  text-transform: uppercase;
-  letter-spacing: var(--tracking-wide);
-  color: var(--color-cream-72);
-  margin-top: var(--space-sm);
-  max-width: 38ch;
-  padding: 0 var(--space-xs);
-  opacity: 0;
-  animation: fadeSlideUp var(--dur-slow) var(--ease-entrance) var(--delay-tagline) forwards;
-}
-
-@media (min-width: 768px) {
-  .hero__tagline {
-    font-size: 0.7rem;
-    margin-top: var(--space-md);
-    padding: 0;
-  }
-}
-
-@media (min-width: 1024px) {
-  .hero__tagline {
-    font-size: var(--text-sub);
-    letter-spacing: 0.22em;
-    margin-top: var(--space-lg);
-  }
-}
-
 /* ---- CTA ---- */
 
 .hero__cta {

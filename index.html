@@ -49,7 +49,13 @@
       </svg>
     </div>
 
-    <!-- Top bar: flex row — left | center | right -->
+    <div class="header__notch-center">
+      <a href="#" class="header__notch" aria-label="LMW Travel — Home">
+        <span class="header__notch-label">LMW TRAVEL</span>
+      </a>
+    </div>
+
+    <!-- Top bar: flex row — left | right (logo centered via header__notch-center) -->
     <div class="header__bar">
 
       <a href="contact.html" class="header__contact" aria-label="Get in touch with Lynn">
@@ -58,10 +64,6 @@
           <path d="M22 4L12 13 2 4"/>
         </svg>
         <span class="header__contact-label">Contact</span>
-      </a>
-
-      <a href="#" class="header__notch" aria-label="LMW Travel — Home">
-        <span class="header__notch-label">LMW TRAVEL</span>
       </a>
 
       <button
@@ -121,9 +123,9 @@
         </div>
         <nav class="nav-overlay__list" role="navigation" aria-label="Main navigation">
           <a href="about.html" class="nav-overlay__link" data-photo="3">About Me</a>
-          <a href="contact.html" class="nav-overlay__link" data-photo="4">Contact</a>
           <a href="whatido.html" class="nav-overlay__link" data-photo="1">What I Do</a>
           <a href="benefits.html" class="nav-overlay__link" data-photo="2">Benefits &amp; Partnerships</a>
+          <a href="contact.html" class="nav-overlay__link" data-photo="4">Contact</a>
         </nav>
       </div>
       <div class="nav-overlay__lang">
@@ -225,10 +227,6 @@
           <span class="hero__headline-line hero__headline-line--1">Personally Curated.</span>
           <span class="hero__headline-line hero__headline-line--2">Exceptionally Yours.</span>
         </h1>
-
-        <p class="hero__tagline">
-          Luxury travel planned your way — I handle the details.
-        </p>
 
         <a href="#" class="hero__cta">Explore</a>
       </div>
