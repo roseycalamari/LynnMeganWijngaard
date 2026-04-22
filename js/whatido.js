@@ -102,6 +102,98 @@
   });
 
   /* ──────────────────────────────────────────
+     Specialties Carousel Pagination (mobile/tablet)
+  ────────────────────────────────────────── */
+
+  var track = document.querySelector('[data-wid-carousel]');
+  var pagination = document.querySelector('[data-wid-pagination]');
+
+  function clamp(n, min, max) {
+    return Math.min(max, Math.max(min, n));
+  }
+
+  function getActiveIndex() {
+    if (!track) return 0;
+    var cards = track.querySelectorAll('.wid-spec-card');
+    if (!cards.length) return 0;
+
+    var trackRect = track.getBoundingClientRect();
+    var trackCenter = trackRect.left + trackRect.width / 2;
+
+    var bestIndex = 0;
+    var bestDist = Infinity;
+
+    cards.forEach(function (card, idx) {
+      var r = card.getBoundingClientRect();
+      var c = r.left + r.width / 2;
+      var d = Math.abs(c - trackCenter);
+      if (d < bestDist) {
+        bestDist = d;
+        bestIndex = idx;
+      }
+    });
+
+    return bestIndex;
+  }
+
+  function scrollToIndex(index) {
+    if (!track) return;
+    var cards = track.querySelectorAll('.wid-spec-card');
+    if (!cards.length) return;
+
+    var i = clamp(index, 0, cards.length - 1);
+    cards[i].scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+  }
+
+  function setCurrentDot(index) {
+    if (!pagination) return;
+    var dots = pagination.querySelectorAll('.wid-specialties__dot');
+    dots.forEach(function (dot, idx) {
+      dot.setAttribute('aria-current', idx === index ? 'true' : 'false');
+    });
+  }
+
+  function buildDots() {
+    if (!track || !pagination) return;
+    var cards = track.querySelectorAll('.wid-spec-card');
+    if (!cards.length) return;
+
+    pagination.innerHTML = '';
+    cards.forEach(function (_, idx) {
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'wid-specialties__dot';
+      btn.setAttribute('aria-label', 'Go to specialty ' + (idx + 1));
+      btn.setAttribute('aria-current', idx === 0 ? 'true' : 'false');
+      btn.addEventListener('click', function () {
+        scrollToIndex(idx);
+      });
+      pagination.appendChild(btn);
+    });
+  }
+
+  function setupCarousel() {
+    if (!track || !pagination) return;
+    buildDots();
+
+    var ticking = false;
+    function onScroll() {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(function () {
+        setCurrentDot(getActiveIndex());
+        ticking = false;
+      });
+    }
+
+    track.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    onScroll();
+  }
+
+  setupCarousel();
+
+  /* ──────────────────────────────────────────
      Back to Top Button
   ────────────────────────────────────────── */
 
@@ -138,129 +230,4 @@
     });
   }
 
-  /* ──────────────────────────────────────────
-     Specialities Carousel (auto-slide + indicators)
-  ────────────────────────────────────────── */
-
-  (function () {
-    var track = document.getElementById('specialities-track');
-    if (!track) return;
-
-    var cards = Array.from(track.querySelectorAll('.wid-card'));
-    if (!cards.length) return;
-
-    var indicatorsWrap = document.getElementById('specialities-indicators');
-    var indicators = indicatorsWrap ? Array.from(indicatorsWrap.querySelectorAll('.wid-specialities__indicator')) : [];
-
-    var prefersRM = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var isHoverCapable = window.matchMedia && window.matchMedia('(hover: hover)').matches;
-
-    var index = 0;
-    var timer = null;
-    var paused = false;
-
-    function setActiveIndicator(i) {
-      if (!indicators.length) return;
-      indicators.forEach(function (dot, idx) {
-        if (idx === i) dot.classList.add('wid-specialities__indicator--active');
-        else dot.classList.remove('wid-specialities__indicator--active');
-      });
-    }
-
-    function getClosestIndex() {
-      var scrollLeft = track.scrollLeft;
-      var trackCenter = track.offsetWidth / 2;
-      var closestIndex = 0;
-      var closestDist = Infinity;
-
-      cards.forEach(function (card, i) {
-        var cardCenter = card.offsetLeft - scrollLeft + card.offsetWidth / 2;
-        var dist = Math.abs(cardCenter - trackCenter);
-        if (dist < closestDist) {
-          closestDist = dist;
-          closestIndex = i;
-        }
-      });
-
-      return closestIndex;
-    }
-
-    function scrollToIndex(i) {
-      if (!cards[i]) return;
-      index = i;
-      setActiveIndicator(index);
-
-      track.scrollTo({
-        left: cards[i].offsetLeft - (track.offsetWidth - cards[i].offsetWidth) / 2,
-        behavior: prefersRM ? 'auto' : 'smooth'
-      });
-    }
-
-    function next() {
-      scrollToIndex((index + 1) % cards.length);
-    }
-
-    function start() {
-      if (prefersRM) return;
-      stop();
-      timer = window.setInterval(function () {
-        if (!paused) next();
-      }, 3200);
-    }
-
-    function stop() {
-      if (timer) window.clearInterval(timer);
-      timer = null;
-    }
-
-    function pause() { paused = true; }
-    function resume() { paused = false; }
-
-    // Pause on user intent
-    track.addEventListener('pointerdown', pause, { passive: true });
-    track.addEventListener('touchstart', pause, { passive: true });
-    track.addEventListener('touchend', function () { resume(); }, { passive: true });
-    track.addEventListener('pointerup', function () { resume(); }, { passive: true });
-
-    if (isHoverCapable) {
-      track.addEventListener('mouseenter', pause);
-      track.addEventListener('mouseleave', resume);
-    }
-
-    // Keep indicator in sync when user swipes
-    var ticking = false;
-    track.addEventListener('scroll', function () {
-      if (!ticking) {
-        window.requestAnimationFrame(function () {
-          index = getClosestIndex();
-          setActiveIndicator(index);
-          ticking = false;
-        });
-        ticking = true;
-      }
-    }, { passive: true });
-
-    // Dots clickable
-    indicators.forEach(function (dot, i) {
-      dot.addEventListener('click', function () {
-        pause();
-        scrollToIndex(i);
-        window.setTimeout(resume, 800);
-      });
-    });
-
-    // Initialize after layout settles
-    window.requestAnimationFrame(function () {
-      index = getClosestIndex();
-      setActiveIndicator(index);
-      start();
-    });
-
-    window.addEventListener('resize', function () {
-      // re-center current card after breakpoint changes
-      window.requestAnimationFrame(function () {
-        scrollToIndex(index);
-      });
-    }, { passive: true });
-  })();
 })();

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="description" content="Get in touch with Lynn Megan Wijngaard — your private luxury travel curator at LMW Travel.">
-  <title>Contact — LMW Travel</title>
+  <meta name="description" content="Get in touch with Lynn Megan Wijngaard, your private luxury travel curator at LMW Travel." data-i18n-attr="content:meta.contact.description">
+  <title data-i18n="meta.contact.title">Contact, LMW Travel</title>
 
   <!-- Stylesheets (order matters) -->
   <link rel="stylesheet" href="css/reset.css">
@@ -21,6 +21,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <noscript><style>.contact-hero--ready .contact-hero__label,.contact-hero--ready .contact-hero__title,.contact-hero--ready .contact-hero__scroll{opacity:1!important;transform:none!important;animation:none!important}.header{visibility:visible!important}[data-reveal]{opacity:1!important;transform:none!important}</style></noscript>
+
+  <script src="js/i18n.js" defer></script>
 </head>
 <body class="contact-page">
 
@@ -34,19 +36,19 @@
     </div>
 
     <div class="header__notch-center">
-      <a href="index.html" class="header__notch" aria-label="LMW Travel — Home">
+      <a href="index.html" class="header__notch" aria-label="LMW Travel, home" data-i18n-attr="aria-label:a11y.home">
         <span class="header__notch-label">LMW TRAVEL</span>
       </a>
     </div>
 
     <div class="header__bar">
 
-      <a href="contact.html" class="header__contact" aria-label="Get in touch with Lynn">
+      <a href="contact.html" class="header__contact" aria-label="Get in touch with Lynn" data-i18n-attr="aria-label:nav.getInTouch">
         <svg class="header__contact-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
           <rect x="2" y="4" width="20" height="16" rx="2"/>
           <path d="M22 4L12 13 2 4"/>
         </svg>
-        <span class="header__contact-label">Contact</span>
+        <span class="header__contact-label" data-i18n="nav.contact">Contact</span>
       </a>
 
       <button
@@ -55,6 +57,7 @@
         aria-label="Open navigation"
         aria-expanded="false"
         aria-controls="nav-overlay"
+        data-i18n-attr="aria-label:a11y.openNav"
       >
         <span class="hamburger__line" aria-hidden="true"></span>
         <span class="hamburger__line" aria-hidden="true"></span>
@@ -65,47 +68,47 @@
   </header>
 
   <!-- ======== Navigation Overlay ======== -->
-  <div class="nav-overlay" id="nav-overlay" role="dialog" aria-modal="true" aria-label="Navigation menu">
+  <div class="nav-overlay" id="nav-overlay" role="dialog" aria-modal="true" aria-label="Navigation menu" data-i18n-attr="aria-label:a11y.navDialog">
 
     <div class="nav-overlay__panel nav-overlay__panel--left">
       <div class="nav-overlay__inner">
         <div class="nav-overlay__brand-block">
-          <span class="nav-overlay__logo-title">LMW Travel</span>
-          <span class="nav-overlay__logo-subtitle">By: Lynn Megan Wijngaard</span>
+          <span class="nav-overlay__logo-title" data-i18n="common.brand">LMW Travel</span>
+          <span class="nav-overlay__logo-subtitle" data-i18n="common.byLine">By: Lynn Megan Wijngaard</span>
         </div>
         <div class="nav-overlay__contact-block">
-          <h3 class="nav-overlay__contact-heading">Get in Touch</h3>
+          <h3 class="nav-overlay__contact-heading" data-i18n="nav.getInTouchHeading">Get in Touch</h3>
           <p class="nav-overlay__contact-name">Lynn Megan Wijngaard</p>
           <a href="mailto:lynn@lmwtravel.com" class="nav-overlay__contact-link">lynn@lmwtravel.com</a>
           <a href="tel:+351913564962" class="nav-overlay__contact-link">+351 913 564 962</a>
         </div>
         <div class="nav-overlay__social-block">
-          <a href="https://www.instagram.com/lynn_lmwtravel/" target="_blank" rel="noopener noreferrer" class="nav-overlay__social-link" aria-label="Instagram">Instagram</a>
-          <a href="https://www.linkedin.com/in/lynn-megan-wijngaard-82597711a/" target="_blank" rel="noopener noreferrer" class="nav-overlay__social-link" aria-label="LinkedIn">LinkedIn</a>
-          <a href="https://wa.me/351913564962?text=Hi%20Lynn%2C%20I%E2%80%99d%20love%20some%20help%20planning%20my%20next%20trip%20%E2%80%94%20looking%20forward%20to%20hearing%20from%20you!" target="_blank" rel="noopener noreferrer" class="nav-overlay__social-link" aria-label="WhatsApp">WhatsApp</a>
+          <a href="https://www.instagram.com/lynn_lmwtravel/" target="_blank" rel="noopener noreferrer" class="nav-overlay__social-link" aria-label="Instagram" data-i18n="social.instagram" data-i18n-attr="aria-label:social.instagram">Instagram</a>
+          <a href="https://www.linkedin.com/in/lynn-megan-wijngaard-82597711a/" target="_blank" rel="noopener noreferrer" class="nav-overlay__social-link" aria-label="LinkedIn" data-i18n="social.linkedin" data-i18n-attr="aria-label:social.linkedin">LinkedIn</a>
+          <a href="https://wa.me/351913564962?text=Hi%20Lynn%2C%20I%E2%80%99d%20love%20some%20help%20planning%20my%20next%20trip%20%E2%80%94%20looking%20forward%20to%20hearing%20from%20you!" target="_blank" rel="noopener noreferrer" class="nav-overlay__social-link" aria-label="WhatsApp" data-i18n="social.whatsapp" data-i18n-attr="aria-label:social.whatsapp">WhatsApp</a>
         </div>
       </div>
     </div>
 
     <div class="nav-overlay__photo">
-      <img src="assets/images/lynn photo for off canvas menu.jpg" alt="LMW Travel" class="nav-overlay__photo-img nav-overlay__photo-img--active" data-index="0" />
-      <img src="assets/images/what i do photo.jpg" alt="What I Do" class="nav-overlay__photo-img" data-index="1" />
-      <img src="assets/images/benefits.jpg" alt="Benefits & Partnerships" class="nav-overlay__photo-img" data-index="2" />
-      <img src="assets/images/Lynn about me photo.jpg" alt="About Me" class="nav-overlay__photo-img" data-index="3" />
-      <img src="assets/images/contact photo.jpg" alt="Contact" class="nav-overlay__photo-img" data-index="4" />
+      <img src="assets/images/lynn photo for off canvas menu.jpg" alt="LMW Travel" class="nav-overlay__photo-img nav-overlay__photo-img--active" data-index="0" loading="lazy" decoding="async" data-i18n-attr="alt:common.brand" />
+      <img src="assets/images/what i do photo.jpg" alt="What I Do" class="nav-overlay__photo-img" data-index="1" loading="lazy" decoding="async" data-i18n-attr="alt:nav.whatIDo" />
+      <img src="assets/images/benefits.jpg" alt="Benefits & Partnerships" class="nav-overlay__photo-img" data-index="2" loading="lazy" decoding="async" data-i18n-attr="alt:nav.benefits" />
+      <img src="assets/images/Lynn about me photo.jpg" alt="About Me" class="nav-overlay__photo-img" data-index="3" loading="lazy" decoding="async" data-i18n-attr="alt:nav.about" />
+      <img src="assets/images/contact photo.jpg" alt="Contact" class="nav-overlay__photo-img" data-index="4" loading="lazy" decoding="async" data-i18n-attr="alt:nav.contact" />
     </div>
 
     <div class="nav-overlay__panel nav-overlay__panel--right">
       <div class="nav-overlay__inner">
         <div class="nav-overlay__brand-block nav-overlay__brand-block--mobile">
-          <span class="nav-overlay__logo-title">LMW Travel</span>
-          <span class="nav-overlay__logo-subtitle">By: Lynn Megan Wijngaard</span>
+          <span class="nav-overlay__logo-title" data-i18n="common.brand">LMW Travel</span>
+          <span class="nav-overlay__logo-subtitle" data-i18n="common.byLine">By: Lynn Megan Wijngaard</span>
         </div>
         <nav class="nav-overlay__list" role="navigation" aria-label="Main navigation">
-          <a href="about.html" class="nav-overlay__link" data-photo="3">About Me</a>
-          <a href="whatido.html" class="nav-overlay__link" data-photo="1">What I Do</a>
-          <a href="benefits.html" class="nav-overlay__link" data-photo="2">Benefits &amp; Partnerships</a>
-          <a href="contact.html" class="nav-overlay__link" data-photo="4">Contact</a>
+          <a href="about.html" class="nav-overlay__link" data-photo="3" data-i18n="nav.about">About Me</a>
+          <a href="whatido.html" class="nav-overlay__link" data-photo="1" data-i18n="nav.whatIDo">What I Do</a>
+          <a href="benefits.html" class="nav-overlay__link" data-photo="2" data-i18n="nav.benefits">Benefits &amp; Partnerships</a>
+          <a href="contact.html" class="nav-overlay__link" data-photo="4" data-i18n="nav.contact">Contact</a>
         </nav>
       </div>
       <div class="nav-overlay__lang">
@@ -121,77 +124,77 @@
   <main>
 
     <!-- ======== Hero Section ======== -->
-    <section class="contact-hero" aria-label="Contact">
+    <section class="contact-hero" aria-label="Contact" data-i18n-attr="aria-label:contact.hero.aria">
 
       <div class="contact-hero__image" aria-hidden="true"></div>
       <div class="contact-hero__overlay" aria-hidden="true"></div>
 
       <div class="contact-hero__content">
-        <span class="contact-hero__label">Contact</span>
-        <h1 class="contact-hero__title">Get in Touch</h1>
+        <span class="contact-hero__label" data-i18n="contact.hero.label">Contact</span>
+        <h1 class="contact-hero__title" data-i18n="contact.hero.title">Get in Touch</h1>
       </div>
 
       <div class="contact-hero__scroll" aria-hidden="true">
-        <span class="contact-hero__scroll-label">Scroll</span>
+        <span class="contact-hero__scroll-label" data-i18n="contact.hero.scroll">Scroll</span>
         <span class="contact-hero__scroll-line"></span>
       </div>
 
     </section>
 
     <!-- ======== Contact Info ======== -->
-    <section class="contact-info" aria-label="Contact information">
+    <section class="contact-info" aria-label="Contact information" data-i18n-attr="aria-label:contact.info.aria">
       <div class="contact-info__inner" data-reveal>
 
-        <span class="contact-info__eyebrow">Reach Out</span>
-        <h2 class="contact-info__heading">I'd Love to Hear from You</h2>
+        <span class="contact-info__eyebrow" data-i18n="contact.info.eyebrow">Reach Out</span>
+        <h2 class="contact-info__heading" data-i18n="contact.info.heading">I'd Love to Hear from You</h2>
         <div class="contact-info__line" aria-hidden="true"></div>
 
         <div class="contact-info__channels">
           <div class="contact-info__channel">
-            <span class="contact-info__channel-label">Email</span>
+            <span class="contact-info__channel-label" data-i18n="contact.channel.email">Email</span>
             <a href="mailto:lynn@lmwtravel.com" class="contact-info__channel-value">lynn@lmwtravel.com</a>
           </div>
           <div class="contact-info__channel">
-            <span class="contact-info__channel-label">Phone</span>
+            <span class="contact-info__channel-label" data-i18n="contact.channel.phone">Phone</span>
             <a href="tel:+351913564962" class="contact-info__channel-value">+351 913 564 962</a>
           </div>
           <div class="contact-info__channel">
-            <span class="contact-info__channel-label">WhatsApp</span>
+            <span class="contact-info__channel-label" data-i18n="contact.channel.whatsapp">WhatsApp</span>
             <a href="https://wa.me/351913564962" class="contact-info__channel-value" target="_blank" rel="noopener">+351 913 564 962</a>
           </div>
         </div>
 
         <div class="contact-info__social">
-          <a href="https://www.instagram.com/lynn_lmwtravel/" target="_blank" rel="noopener noreferrer" class="contact-info__social-link" aria-label="Instagram">Instagram</a>
-          <a href="https://www.linkedin.com/in/lynn-megan-wijngaard-82597711a/" target="_blank" rel="noopener noreferrer" class="contact-info__social-link" aria-label="LinkedIn">LinkedIn</a>
-          <a href="https://wa.me/351913564962?text=Hi%20Lynn%2C%20I%E2%80%99d%20love%20some%20help%20planning%20my%20next%20trip%20%E2%80%94%20looking%20forward%20to%20hearing%20from%20you!" target="_blank" rel="noopener noreferrer" class="contact-info__social-link" aria-label="WhatsApp">WhatsApp</a>
+          <a href="https://www.instagram.com/lynn_lmwtravel/" target="_blank" rel="noopener noreferrer" class="contact-info__social-link" aria-label="Instagram" data-i18n="social.instagram" data-i18n-attr="aria-label:social.instagram">Instagram</a>
+          <a href="https://www.linkedin.com/in/lynn-megan-wijngaard-82597711a/" target="_blank" rel="noopener noreferrer" class="contact-info__social-link" aria-label="LinkedIn" data-i18n="social.linkedin" data-i18n-attr="aria-label:social.linkedin">LinkedIn</a>
+          <a href="https://wa.me/351913564962?text=Hi%20Lynn%2C%20I%E2%80%99d%20love%20some%20help%20planning%20my%20next%20trip%20%E2%80%94%20looking%20forward%20to%20hearing%20from%20you!" target="_blank" rel="noopener noreferrer" class="contact-info__social-link" aria-label="WhatsApp" data-i18n="social.whatsapp" data-i18n-attr="aria-label:social.whatsapp">WhatsApp</a>
         </div>
 
       </div>
     </section>
 
     <!-- ======== Details — Availability ======== -->
-    <section class="contact-details" aria-label="Availability">
+    <section class="contact-details" aria-label="Availability" data-i18n-attr="aria-label:contact.details.aria">
       <div class="contact-details__bg" aria-hidden="true"></div>
       <div class="contact-details__overlay" aria-hidden="true"></div>
       <div class="contact-details__inner" data-reveal>
 
-        <span class="contact-details__eyebrow">Availability</span>
-        <h2 class="contact-details__heading">How I Work</h2>
+        <span class="contact-details__eyebrow" data-i18n="contact.details.eyebrow">Availability</span>
+        <h2 class="contact-details__heading" data-i18n="contact.details.heading">How I Work</h2>
         <div class="contact-details__line" aria-hidden="true"></div>
 
         <div class="contact-details__grid">
           <div class="contact-details__item">
-            <h3 class="contact-details__item-title">Based In</h3>
-            <p class="contact-details__item-desc">Based in Portugal, serving clients around the world.</p>
+            <h3 class="contact-details__item-title" data-i18n="contact.details.item1.title">Based In</h3>
+            <p class="contact-details__item-desc" data-i18n="contact.details.item1.desc">Based in Portugal, serving clients around the world.</p>
           </div>
           <div class="contact-details__item">
-            <h3 class="contact-details__item-title">Response</h3>
-            <p class="contact-details__item-desc">Available at your convenience via WhatsApp, email, or phone, so we can bring your dream holiday into focus.</p>
+            <h3 class="contact-details__item-title" data-i18n="contact.details.item2.title">Response</h3>
+            <p class="contact-details__item-desc" data-i18n="contact.details.item2.desc">Available at your convenience via WhatsApp, email, or phone, so we can bring your dream holiday into focus.</p>
           </div>
           <div class="contact-details__item">
-            <h3 class="contact-details__item-title">Getting to Work</h3>
-            <p class="contact-details__item-desc">I will craft a curated proposal inspired by your vision.</p>
+            <h3 class="contact-details__item-title" data-i18n="contact.details.item3.title">Getting to Work</h3>
+            <p class="contact-details__item-desc" data-i18n="contact.details.item3.desc">I will craft a curated proposal inspired by your vision.</p>
           </div>
         </div>
 
@@ -201,11 +204,9 @@
     <!-- ======== Call to Action ======== -->
     <section class="contact-cta" aria-label="Send a message">
       <div class="contact-cta__inner" data-reveal>
-        <h2 class="contact-cta__heading">Ready to Begin?</h2>
-        <p class="contact-cta__desc">
-          Send a quick note with what you have so far — dates, destination ideas, and anything you already know.
-        </p>
-        <a href="mailto:lynn@lmwtravel.com" class="contact-cta__btn">Send an Email</a>
+        <h2 class="contact-cta__heading" data-i18n="contact.cta.heading">Ready to Begin?</h2>
+        <p class="contact-cta__desc" data-i18n="contact.cta.body">Send a quick note with what you have so far, dates, destination ideas, and anything you already know.</p>
+        <a href="mailto:lynn@lmwtravel.com" class="contact-cta__btn" data-i18n="contact.cta.button">Send an Email</a>
       </div>
     </section>
 
@@ -216,32 +217,32 @@
     <div class="site-footer__card">
       <div class="site-footer__top" data-reveal>
         <div class="site-footer__brand">
-          <span class="site-footer__logo">LMW Travel</span>
-          <span class="site-footer__tagline">By: Lynn Megan Wijngaard</span>
+          <span class="site-footer__logo" data-i18n="common.brand">LMW Travel</span>
+          <span class="site-footer__tagline" data-i18n="common.byLine">By: Lynn Megan Wijngaard</span>
         </div>
         <nav class="site-footer__links" aria-label="Footer navigation">
-          <a href="index.html" class="site-footer__link">Home</a>
-          <a href="about.html" class="site-footer__link">About</a>
-          <a href="whatido.html" class="site-footer__link">What&nbsp;I&nbsp;Do</a>
-          <a href="contact.html" class="site-footer__link">Contact</a>
+          <a href="index.html" class="site-footer__link" data-i18n="footer.home">Home</a>
+          <a href="about.html" class="site-footer__link" data-i18n="footer.about">About</a>
+          <a href="whatido.html" class="site-footer__link" data-i18n="footer.whatido">What&nbsp;I&nbsp;Do</a>
+          <a href="contact.html" class="site-footer__link" data-i18n="footer.contact">Contact</a>
         </nav>
       </div>
       <div class="site-footer__bottom">
-        <span class="site-footer__copy">&copy; 2026 LMW Travel. All rights reserved.</span>
+        <span class="site-footer__copy" data-i18n="footer.copyright">&copy; 2026 LMW Travel. All rights reserved.</span>
         <div class="site-footer__social">
-          <a href="https://www.instagram.com/lynn_lmwtravel/" target="_blank" rel="noopener noreferrer" class="site-footer__social-link" aria-label="Instagram">Instagram</a>
-          <a href="https://www.linkedin.com/in/lynn-megan-wijngaard-82597711a/" target="_blank" rel="noopener noreferrer" class="site-footer__social-link" aria-label="LinkedIn">LinkedIn</a>
-          <a href="https://wa.me/351913564962?text=Hi%20Lynn%2C%20I%E2%80%99d%20love%20some%20help%20planning%20my%20next%20trip%20%E2%80%94%20looking%20forward%20to%20hearing%20from%20you!" target="_blank" rel="noopener noreferrer" class="site-footer__social-link" aria-label="WhatsApp">WhatsApp</a>
+          <a href="https://www.instagram.com/lynn_lmwtravel/" target="_blank" rel="noopener noreferrer" class="site-footer__social-link" aria-label="Instagram" data-i18n="social.instagram" data-i18n-attr="aria-label:social.instagram">Instagram</a>
+          <a href="https://www.linkedin.com/in/lynn-megan-wijngaard-82597711a/" target="_blank" rel="noopener noreferrer" class="site-footer__social-link" aria-label="LinkedIn" data-i18n="social.linkedin" data-i18n-attr="aria-label:social.linkedin">LinkedIn</a>
+          <a href="https://wa.me/351913564962?text=Hi%20Lynn%2C%20I%E2%80%99d%20love%20some%20help%20planning%20my%20next%20trip%20%E2%80%94%20looking%20forward%20to%20hearing%20from%20you!" target="_blank" rel="noopener noreferrer" class="site-footer__social-link" aria-label="WhatsApp" data-i18n="social.whatsapp" data-i18n-attr="aria-label:social.whatsapp">WhatsApp</a>
         </div>
       </div>
       <div class="site-footer__credit">
-        <span class="site-footer__credit-text">Developed by <a href="https://www.cutstudios.pt" target="_blank" rel="noopener noreferrer" class="site-footer__credit-link" aria-label="Cut Studios"><span class="site-footer__cut-logo" aria-hidden="true"></span>Cut Studios</a></span>
+        <span class="site-footer__credit-text"><span data-i18n="footer.developedBy">Developed by</span> <a href="https://www.cutstudios.pt" target="_blank" rel="noopener noreferrer" class="site-footer__credit-link" aria-label="Cut Studios"><span class="site-footer__cut-logo" aria-hidden="true"></span>Cut Studios</a></span>
       </div>
     </div>
   </footer>
 
   <!-- ======== Back to Top ======== -->
-  <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top">
+  <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top" data-i18n-attr="aria-label:a11y.backToTop">
     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
       <path d="M7 12V2"/>
       <path d="M2 6l5-5 5 5"/>

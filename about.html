@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="description" content="Meet Lynn Megan Wijngaard — the curator behind LMW Travel's bespoke luxury journeys.">
-  <title>About Lynn — LMW Travel</title>
+  <meta name="description" content="Meet Lynn Megan Wijngaard, the curator behind LMW Travel's bespoke luxury journeys." data-i18n-attr="content:meta.about.description">
+  <title data-i18n="meta.about.title">About Lynn, LMW Travel</title>
 
   <!-- Stylesheets (order matters) -->
   <link rel="stylesheet" href="css/reset.css">
@@ -21,6 +21,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <noscript><style>.about-hero--ready .about-hero__label,.about-hero--ready .about-hero__title,.about-hero--ready .about-hero__subtitle,.about-hero--ready .about-hero__scroll{opacity:1!important;transform:none!important;animation:none!important}.header{visibility:visible!important}[data-reveal]{opacity:1!important;transform:none!important}</style></noscript>
+
+  <script src="js/i18n.js" defer></script>
 </head>
 <body class="about-page">
 
@@ -34,19 +36,19 @@
     </div>
 
     <div class="header__notch-center">
-      <a href="index.html" class="header__notch" aria-label="LMW Travel — Home">
+      <a href="index.html" class="header__notch" aria-label="LMW Travel, home" data-i18n-attr="aria-label:a11y.home">
         <span class="header__notch-label">LMW TRAVEL</span>
       </a>
     </div>
 
     <div class="header__bar">
 
-      <a href="contact.html" class="header__contact" aria-label="Get in touch with Lynn">
+      <a href="contact.html" class="header__contact" aria-label="Get in touch with Lynn" data-i18n-attr="aria-label:nav.getInTouch">
         <svg class="header__contact-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
           <rect x="2" y="4" width="20" height="16" rx="2"/>
           <path d="M22 4L12 13 2 4"/>
         </svg>
-        <span class="header__contact-label">Contact</span>
+        <span class="header__contact-label" data-i18n="nav.contact">Contact</span>
       </a>
 
       <button
@@ -55,6 +57,7 @@
         aria-label="Open navigation"
         aria-expanded="false"
         aria-controls="nav-overlay"
+        data-i18n-attr="aria-label:a11y.openNav"
       >
         <span class="hamburger__line" aria-hidden="true"></span>
         <span class="hamburger__line" aria-hidden="true"></span>
@@ -65,47 +68,47 @@
   </header>
 
   <!-- ======== Navigation Overlay ======== -->
-  <div class="nav-overlay" id="nav-overlay" role="dialog" aria-modal="true" aria-label="Navigation menu">
+  <div class="nav-overlay" id="nav-overlay" role="dialog" aria-modal="true" aria-label="Navigation menu" data-i18n-attr="aria-label:a11y.navDialog">
 
     <div class="nav-overlay__panel nav-overlay__panel--left">
       <div class="nav-overlay__inner">
         <div class="nav-overlay__brand-block">
-          <span class="nav-overlay__logo-title">LMW Travel</span>
-          <span class="nav-overlay__logo-subtitle">By: Lynn Megan Wijngaard</span>
+          <span class="nav-overlay__logo-title" data-i18n="common.brand">LMW Travel</span>
+          <span class="nav-overlay__logo-subtitle" data-i18n="common.byLine">By: Lynn Megan Wijngaard</span>
         </div>
         <div class="nav-overlay__contact-block">
-          <h3 class="nav-overlay__contact-heading">Get in Touch</h3>
+          <h3 class="nav-overlay__contact-heading" data-i18n="nav.getInTouchHeading">Get in Touch</h3>
           <p class="nav-overlay__contact-name">Lynn Megan Wijngaard</p>
           <a href="mailto:lynn@lmwtravel.com" class="nav-overlay__contact-link">lynn@lmwtravel.com</a>
           <a href="tel:+351913564962" class="nav-overlay__contact-link">+351 913 564 962</a>
         </div>
         <div class="nav-overlay__social-block">
-          <a href="https://www.instagram.com/lynn_lmwtravel/" target="_blank" rel="noopener noreferrer" class="nav-overlay__social-link" aria-label="Instagram">Instagram</a>
-          <a href="https://www.linkedin.com/in/lynn-megan-wijngaard-82597711a/" target="_blank" rel="noopener noreferrer" class="nav-overlay__social-link" aria-label="LinkedIn">LinkedIn</a>
-          <a href="https://wa.me/351913564962?text=Hi%20Lynn%2C%20I%E2%80%99d%20love%20some%20help%20planning%20my%20next%20trip%20%E2%80%94%20looking%20forward%20to%20hearing%20from%20you!" target="_blank" rel="noopener noreferrer" class="nav-overlay__social-link" aria-label="WhatsApp">WhatsApp</a>
+          <a href="https://www.instagram.com/lynn_lmwtravel/" target="_blank" rel="noopener noreferrer" class="nav-overlay__social-link" aria-label="Instagram" data-i18n="social.instagram" data-i18n-attr="aria-label:social.instagram">Instagram</a>
+          <a href="https://www.linkedin.com/in/lynn-megan-wijngaard-82597711a/" target="_blank" rel="noopener noreferrer" class="nav-overlay__social-link" aria-label="LinkedIn" data-i18n="social.linkedin" data-i18n-attr="aria-label:social.linkedin">LinkedIn</a>
+          <a href="https://wa.me/351913564962?text=Hi%20Lynn%2C%20I%E2%80%99d%20love%20some%20help%20planning%20my%20next%20trip%20%E2%80%94%20looking%20forward%20to%20hearing%20from%20you!" target="_blank" rel="noopener noreferrer" class="nav-overlay__social-link" aria-label="WhatsApp" data-i18n="social.whatsapp" data-i18n-attr="aria-label:social.whatsapp">WhatsApp</a>
         </div>
       </div>
     </div>
 
     <div class="nav-overlay__photo">
-      <img src="assets/images/lynn photo for off canvas menu.jpg" alt="LMW Travel" class="nav-overlay__photo-img nav-overlay__photo-img--active" data-index="0" />
-      <img src="assets/images/what i do photo.jpg" alt="What I Do" class="nav-overlay__photo-img" data-index="1" />
-      <img src="assets/images/benefits.jpg" alt="Benefits & Partnerships" class="nav-overlay__photo-img" data-index="2" />
-      <img src="assets/images/Lynn about me photo.jpg" alt="About Me" class="nav-overlay__photo-img" data-index="3" />
-      <img src="assets/images/contact photo.jpg" alt="Contact" class="nav-overlay__photo-img" data-index="4" />
+      <img src="assets/images/lynn photo for off canvas menu.jpg" alt="LMW Travel" class="nav-overlay__photo-img nav-overlay__photo-img--active" data-index="0" loading="lazy" decoding="async" data-i18n-attr="alt:common.brand" />
+      <img src="assets/images/what i do photo.jpg" alt="What I Do" class="nav-overlay__photo-img" data-index="1" loading="lazy" decoding="async" data-i18n-attr="alt:nav.whatIDo" />
+      <img src="assets/images/benefits.jpg" alt="Benefits & Partnerships" class="nav-overlay__photo-img" data-index="2" loading="lazy" decoding="async" data-i18n-attr="alt:nav.benefits" />
+      <img src="assets/images/Lynn about me photo.jpg" alt="About Me" class="nav-overlay__photo-img" data-index="3" loading="lazy" decoding="async" data-i18n-attr="alt:nav.about" />
+      <img src="assets/images/contact photo.jpg" alt="Contact" class="nav-overlay__photo-img" data-index="4" loading="lazy" decoding="async" data-i18n-attr="alt:nav.contact" />
     </div>
 
     <div class="nav-overlay__panel nav-overlay__panel--right">
       <div class="nav-overlay__inner">
         <div class="nav-overlay__brand-block nav-overlay__brand-block--mobile">
-          <span class="nav-overlay__logo-title">LMW Travel</span>
-          <span class="nav-overlay__logo-subtitle">By: Lynn Megan Wijngaard</span>
+          <span class="nav-overlay__logo-title" data-i18n="common.brand">LMW Travel</span>
+          <span class="nav-overlay__logo-subtitle" data-i18n="common.byLine">By: Lynn Megan Wijngaard</span>
         </div>
         <nav class="nav-overlay__list" role="navigation" aria-label="Main navigation">
-          <a href="about.html" class="nav-overlay__link" data-photo="3">About Me</a>
-          <a href="whatido.html" class="nav-overlay__link" data-photo="1">What I Do</a>
-          <a href="benefits.html" class="nav-overlay__link" data-photo="2">Benefits &amp; Partnerships</a>
-          <a href="contact.html" class="nav-overlay__link" data-photo="4">Contact</a>
+          <a href="about.html" class="nav-overlay__link" data-photo="3" data-i18n="nav.about">About Me</a>
+          <a href="whatido.html" class="nav-overlay__link" data-photo="1" data-i18n="nav.whatIDo">What I Do</a>
+          <a href="benefits.html" class="nav-overlay__link" data-photo="2" data-i18n="nav.benefits">Benefits &amp; Partnerships</a>
+          <a href="contact.html" class="nav-overlay__link" data-photo="4" data-i18n="nav.contact">Contact</a>
         </nav>
       </div>
       <div class="nav-overlay__lang">
@@ -121,55 +124,49 @@
   <main>
 
     <!-- ======== Hero Section ======== -->
-    <section class="about-hero" aria-label="About Lynn">
+    <section class="about-hero" aria-label="About Lynn" data-i18n-attr="aria-label:about.hero.aria">
 
       <div class="about-hero__image" aria-hidden="true"></div>
       <div class="about-hero__overlay" aria-hidden="true"></div>
 
       <div class="about-hero__content">
-        <span class="about-hero__label">About</span>
+        <span class="about-hero__label" data-i18n="about.hero.label">About</span>
         <h1 class="about-hero__title">Lynn Megan Wijngaard</h1>
-        <p class="about-hero__subtitle">
-          A private travel curator for clients who value discretion, detail, and effortless luxury.
-        </p>
+        <p class="about-hero__subtitle" data-i18n="about.hero.subtitle">A private travel curator for clients who value discretion, detail, and effortless luxury.</p>
       </div>
 
       <div class="about-hero__scroll" aria-hidden="true">
-        <span class="about-hero__scroll-label">Scroll</span>
+        <span class="about-hero__scroll-label" data-i18n="about.hero.scroll">Scroll</span>
         <span class="about-hero__scroll-line"></span>
       </div>
 
     </section>
 
     <!-- ======== Biography Section ======== -->
-    <section class="about-bio" aria-label="Biography">
+    <section class="about-bio" aria-label="Biography" data-i18n-attr="aria-label:about.bio.aria">
       <div class="about-bio__inner">
 
         <div class="about-bio__portrait-wrap" data-reveal>
           <div class="about-bio__portrait">
             <img
               src="assets/images/thestorysectionimage.jpg"
-              alt="Lynn Megan Wijngaard — luxury travel curator"
+              alt="Lynn Megan Wijngaard, luxury travel curator"
               loading="lazy"
+              decoding="async"
+              data-i18n-attr="alt:about.bio.imgAlt"
             />
             <div class="about-bio__portrait-accent" aria-hidden="true"></div>
           </div>
         </div>
 
         <div class="about-bio__text" data-reveal>
-          <span class="about-bio__eyebrow">The Story</span>
-          <h2 class="about-bio__heading">A Passion for<br>Extraordinary Travel</h2>
+          <span class="about-bio__eyebrow" data-i18n="about.bio.story">The Story</span>
+          <h2 class="about-bio__heading" data-i18n="about.bio.heading">A Passion for<br>Extraordinary Travel</h2>
           <div class="about-bio__line" aria-hidden="true"></div>
           <div class="about-bio__body">
-            <p>
-              Trips should fit the way you live, not the other way around. I build each one around your pace, your habits, and the small preferences that make a holiday feel like yours. By the time you arrive, I want the logistics to feel settled so you can simply enjoy being there.
-            </p>
-            <p>
-              I’m affiliated with Coastline Travel Group, which opens the door to stronger amenities, priority recognition where it matters, and relationships with partners around the world. A lot of what comes with that is simply not the kind of thing you’d match on your own from a booking site.
-            </p>
-            <p>
-              I spend part of my year in Portugal and part in the United States, and I work with clients wherever they are. You have one person beside you from the first spark of an idea to the day you’re home again.
-            </p>
+            <p data-i18n="about.bio.p1">Trips should fit the way you live, not the other way around. I build each one around your pace, your habits, and the small preferences that make a holiday feel like yours. By the time you arrive, I want the logistics to feel settled so you can simply enjoy being there.</p>
+            <p data-i18n="about.bio.p2">I’m affiliated with Coastline Travel Group, which opens the door to stronger amenities, priority recognition where it matters, and relationships with partners around the world. A lot of what comes with that is simply not the kind of thing you’d match on your own from a booking site.</p>
+            <p data-i18n="about.bio.p3">I spend part of my year in Portugal and part in the United States, and I work with clients wherever they are. You have one person beside you from the first spark of an idea to the day you’re home again.</p>
           </div>
         </div>
 
@@ -177,27 +174,25 @@
     </section>
 
     <!-- ======== Values / Philosophy ======== -->
-    <section class="about-values" aria-label="Philosophy">
+    <section class="about-values" aria-label="Philosophy" data-i18n-attr="aria-label:about.values.aria">
       <div class="about-values__bg" aria-hidden="true"></div>
       <div class="about-values__overlay" aria-hidden="true"></div>
       <div class="about-values__inner" data-reveal>
 
-        <span class="about-values__eyebrow">Philosophy</span>
-        <h2 class="about-values__heading">What Guides Me</h2>
-        <blockquote class="about-values__quote">
-          Luxury is zero stress, comfort, and a few little fun surprises along the way.
-        </blockquote>
+        <span class="about-values__eyebrow" data-i18n="about.values.eyebrow">Philosophy</span>
+        <h2 class="about-values__heading" data-i18n="about.values.heading">What Guides Me</h2>
+        <blockquote class="about-values__quote" data-i18n="about.values.quote">Luxury is zero stress, comfort, and a few little fun surprises along the way.</blockquote>
         <div class="about-values__line" aria-hidden="true"></div>
 
         <div class="about-values__pillars">
           <div class="about-values__pillar">
-            <h3 class="about-values__pillar-title">Personal</h3>
+            <h3 class="about-values__pillar-title" data-i18n="about.values.pillar1">Personal</h3>
           </div>
           <div class="about-values__pillar">
-            <h3 class="about-values__pillar-title">Curated</h3>
+            <h3 class="about-values__pillar-title" data-i18n="about.values.pillar2">Curated</h3>
           </div>
           <div class="about-values__pillar">
-            <h3 class="about-values__pillar-title">Effortless</h3>
+            <h3 class="about-values__pillar-title" data-i18n="about.values.pillar3">Effortless</h3>
           </div>
         </div>
 
@@ -207,11 +202,9 @@
     <!-- ======== Call to Action ======== -->
     <section class="about-cta" aria-label="Get started">
       <div class="about-cta__inner" data-reveal>
-        <h2 class="about-cta__heading">Let's Create Your Journey</h2>
-        <p class="about-cta__desc">
-          Share what you’re thinking — even if it’s just a rough idea — and we’ll take it from there.
-        </p>
-        <a href="mailto:lynn@lmwtravel.com" class="about-cta__btn">Get in Touch</a>
+        <h2 class="about-cta__heading" data-i18n="about.cta.heading">Let's Create Your Journey</h2>
+        <p class="about-cta__desc" data-i18n="about.cta.body">Share what you’re thinking, even if it’s just a rough idea. We’ll take it from there.</p>
+        <a href="mailto:lynn@lmwtravel.com" class="about-cta__btn" data-i18n="about.cta.button">Get in Touch</a>
       </div>
     </section>
 
@@ -222,32 +215,32 @@
     <div class="site-footer__card">
       <div class="site-footer__top" data-reveal>
         <div class="site-footer__brand">
-          <span class="site-footer__logo">LMW Travel</span>
-          <span class="site-footer__tagline">By: Lynn Megan Wijngaard</span>
+          <span class="site-footer__logo" data-i18n="common.brand">LMW Travel</span>
+          <span class="site-footer__tagline" data-i18n="common.byLine">By: Lynn Megan Wijngaard</span>
         </div>
         <nav class="site-footer__links" aria-label="Footer navigation">
-          <a href="index.html" class="site-footer__link">Home</a>
-          <a href="about.html" class="site-footer__link">About</a>
-          <a href="whatido.html" class="site-footer__link">What&nbsp;I&nbsp;Do</a>
-          <a href="contact.html" class="site-footer__link">Contact</a>
+          <a href="index.html" class="site-footer__link" data-i18n="footer.home">Home</a>
+          <a href="about.html" class="site-footer__link" data-i18n="footer.about">About</a>
+          <a href="whatido.html" class="site-footer__link" data-i18n="footer.whatido">What&nbsp;I&nbsp;Do</a>
+          <a href="contact.html" class="site-footer__link" data-i18n="footer.contact">Contact</a>
         </nav>
       </div>
       <div class="site-footer__bottom">
-        <span class="site-footer__copy">&copy; 2026 LMW Travel. All rights reserved.</span>
+        <span class="site-footer__copy" data-i18n="footer.copyright">&copy; 2026 LMW Travel. All rights reserved.</span>
         <div class="site-footer__social">
-          <a href="https://www.instagram.com/lynn_lmwtravel/" target="_blank" rel="noopener noreferrer" class="site-footer__social-link" aria-label="Instagram">Instagram</a>
-          <a href="https://www.linkedin.com/in/lynn-megan-wijngaard-82597711a/" target="_blank" rel="noopener noreferrer" class="site-footer__social-link" aria-label="LinkedIn">LinkedIn</a>
-          <a href="https://wa.me/351913564962?text=Hi%20Lynn%2C%20I%E2%80%99d%20love%20some%20help%20planning%20my%20next%20trip%20%E2%80%94%20looking%20forward%20to%20hearing%20from%20you!" target="_blank" rel="noopener noreferrer" class="site-footer__social-link" aria-label="WhatsApp">WhatsApp</a>
+          <a href="https://www.instagram.com/lynn_lmwtravel/" target="_blank" rel="noopener noreferrer" class="site-footer__social-link" aria-label="Instagram" data-i18n="social.instagram" data-i18n-attr="aria-label:social.instagram">Instagram</a>
+          <a href="https://www.linkedin.com/in/lynn-megan-wijngaard-82597711a/" target="_blank" rel="noopener noreferrer" class="site-footer__social-link" aria-label="LinkedIn" data-i18n="social.linkedin" data-i18n-attr="aria-label:social.linkedin">LinkedIn</a>
+          <a href="https://wa.me/351913564962?text=Hi%20Lynn%2C%20I%E2%80%99d%20love%20some%20help%20planning%20my%20next%20trip%20%E2%80%94%20looking%20forward%20to%20hearing%20from%20you!" target="_blank" rel="noopener noreferrer" class="site-footer__social-link" aria-label="WhatsApp" data-i18n="social.whatsapp" data-i18n-attr="aria-label:social.whatsapp">WhatsApp</a>
         </div>
       </div>
       <div class="site-footer__credit">
-        <span class="site-footer__credit-text">Developed by <a href="https://www.cutstudios.pt" target="_blank" rel="noopener noreferrer" class="site-footer__credit-link" aria-label="Cut Studios"><span class="site-footer__cut-logo" aria-hidden="true"></span>Cut Studios</a></span>
+        <span class="site-footer__credit-text"><span data-i18n="footer.developedBy">Developed by</span> <a href="https://www.cutstudios.pt" target="_blank" rel="noopener noreferrer" class="site-footer__credit-link" aria-label="Cut Studios"><span class="site-footer__cut-logo" aria-hidden="true"></span>Cut Studios</a></span>
       </div>
     </div>
   </footer>
 
   <!-- ======== Back to Top ======== -->
-  <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top">
+  <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top" data-i18n-attr="aria-label:a11y.backToTop">
     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
       <path d="M7 12V2"/>
       <path d="M2 6l5-5 5 5"/>

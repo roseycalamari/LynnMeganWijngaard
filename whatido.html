@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="description" content="Discover what Lynn does — bespoke itineraries, luxury hotel bookings, cruise planning, and end-to-end travel curation by LMW Travel.">
-  <title>What I Do — LMW Travel</title>
+  <meta name="description" content="Discover what Lynn does, bespoke itineraries, luxury hotel bookings, cruise planning, and end-to-end travel curation by LMW Travel." data-i18n-attr="content:meta.whatido.description">
+  <title data-i18n="meta.whatido.title">What I Do, LMW Travel</title>
 
   <!-- Stylesheets (order matters) -->
   <link rel="stylesheet" href="css/reset.css">
@@ -21,6 +21,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <noscript><style>.wid-hero--ready .wid-hero__label,.wid-hero--ready .wid-hero__title,.wid-hero--ready .wid-hero__subtitle,.wid-hero--ready .wid-hero__scroll{opacity:1!important;transform:none!important;animation:none!important}.header{visibility:visible!important}[data-reveal]{opacity:1!important;transform:none!important}</style></noscript>
+
+  <script src="js/i18n.js" defer></script>
 </head>
 <body class="whatido-page">
 
@@ -34,19 +36,19 @@
     </div>
 
     <div class="header__notch-center">
-      <a href="index.html" class="header__notch" aria-label="LMW Travel — Home">
+      <a href="index.html" class="header__notch" aria-label="LMW Travel, home" data-i18n-attr="aria-label:a11y.home">
         <span class="header__notch-label">LMW TRAVEL</span>
       </a>
     </div>
 
     <div class="header__bar">
 
-      <a href="contact.html" class="header__contact" aria-label="Get in touch with Lynn">
+      <a href="contact.html" class="header__contact" aria-label="Get in touch with Lynn" data-i18n-attr="aria-label:nav.getInTouch">
         <svg class="header__contact-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
           <rect x="2" y="4" width="20" height="16" rx="2"/>
           <path d="M22 4L12 13 2 4"/>
         </svg>
-        <span class="header__contact-label">Contact</span>
+        <span class="header__contact-label" data-i18n="nav.contact">Contact</span>
       </a>
 
       <button
@@ -55,6 +57,7 @@
         aria-label="Open navigation"
         aria-expanded="false"
         aria-controls="nav-overlay"
+        data-i18n-attr="aria-label:a11y.openNav"
       >
         <span class="hamburger__line" aria-hidden="true"></span>
         <span class="hamburger__line" aria-hidden="true"></span>
@@ -65,47 +68,47 @@
   </header>
 
   <!-- ======== Navigation Overlay ======== -->
-  <div class="nav-overlay" id="nav-overlay" role="dialog" aria-modal="true" aria-label="Navigation menu">
+  <div class="nav-overlay" id="nav-overlay" role="dialog" aria-modal="true" aria-label="Navigation menu" data-i18n-attr="aria-label:a11y.navDialog">
 
     <div class="nav-overlay__panel nav-overlay__panel--left">
       <div class="nav-overlay__inner">
         <div class="nav-overlay__brand-block">
-          <span class="nav-overlay__logo-title">LMW Travel</span>
-          <span class="nav-overlay__logo-subtitle">By: Lynn Megan Wijngaard</span>
+          <span class="nav-overlay__logo-title" data-i18n="common.brand">LMW Travel</span>
+          <span class="nav-overlay__logo-subtitle" data-i18n="common.byLine">By: Lynn Megan Wijngaard</span>
         </div>
         <div class="nav-overlay__contact-block">
-          <h3 class="nav-overlay__contact-heading">Get in Touch</h3>
+          <h3 class="nav-overlay__contact-heading" data-i18n="nav.getInTouchHeading">Get in Touch</h3>
           <p class="nav-overlay__contact-name">Lynn Megan Wijngaard</p>
           <a href="mailto:lynn@lmwtravel.com" class="nav-overlay__contact-link">lynn@lmwtravel.com</a>
           <a href="tel:+351913564962" class="nav-overlay__contact-link">+351 913 564 962</a>
         </div>
         <div class="nav-overlay__social-block">
-          <a href="https://www.instagram.com/lynn_lmwtravel/" target="_blank" rel="noopener noreferrer" class="nav-overlay__social-link" aria-label="Instagram">Instagram</a>
-          <a href="https://www.linkedin.com/in/lynn-megan-wijngaard-82597711a/" target="_blank" rel="noopener noreferrer" class="nav-overlay__social-link" aria-label="LinkedIn">LinkedIn</a>
-          <a href="https://wa.me/351913564962?text=Hi%20Lynn%2C%20I%E2%80%99d%20love%20some%20help%20planning%20my%20next%20trip%20%E2%80%94%20looking%20forward%20to%20hearing%20from%20you!" target="_blank" rel="noopener noreferrer" class="nav-overlay__social-link" aria-label="WhatsApp">WhatsApp</a>
+          <a href="https://www.instagram.com/lynn_lmwtravel/" target="_blank" rel="noopener noreferrer" class="nav-overlay__social-link" aria-label="Instagram" data-i18n="social.instagram" data-i18n-attr="aria-label:social.instagram">Instagram</a>
+          <a href="https://www.linkedin.com/in/lynn-megan-wijngaard-82597711a/" target="_blank" rel="noopener noreferrer" class="nav-overlay__social-link" aria-label="LinkedIn" data-i18n="social.linkedin" data-i18n-attr="aria-label:social.linkedin">LinkedIn</a>
+          <a href="https://wa.me/351913564962?text=Hi%20Lynn%2C%20I%E2%80%99d%20love%20some%20help%20planning%20my%20next%20trip%20%E2%80%94%20looking%20forward%20to%20hearing%20from%20you!" target="_blank" rel="noopener noreferrer" class="nav-overlay__social-link" aria-label="WhatsApp" data-i18n="social.whatsapp" data-i18n-attr="aria-label:social.whatsapp">WhatsApp</a>
         </div>
       </div>
     </div>
 
     <div class="nav-overlay__photo">
-      <img src="assets/images/lynn photo for off canvas menu.jpg" alt="LMW Travel" class="nav-overlay__photo-img nav-overlay__photo-img--active" data-index="0" />
-      <img src="assets/images/what i do photo.jpg" alt="What I Do" class="nav-overlay__photo-img" data-index="1" />
-      <img src="assets/images/benefits.jpg" alt="Benefits & Partnerships" class="nav-overlay__photo-img" data-index="2" />
-      <img src="assets/images/Lynn about me photo.jpg" alt="About Me" class="nav-overlay__photo-img" data-index="3" />
-      <img src="assets/images/contact photo.jpg" alt="Contact" class="nav-overlay__photo-img" data-index="4" />
+      <img src="assets/images/lynn photo for off canvas menu.jpg" alt="LMW Travel" class="nav-overlay__photo-img nav-overlay__photo-img--active" data-index="0" loading="lazy" decoding="async" data-i18n-attr="alt:common.brand" />
+      <img src="assets/images/what i do photo.jpg" alt="What I Do" class="nav-overlay__photo-img" data-index="1" loading="lazy" decoding="async" data-i18n-attr="alt:nav.whatIDo" />
+      <img src="assets/images/benefits.jpg" alt="Benefits & Partnerships" class="nav-overlay__photo-img" data-index="2" loading="lazy" decoding="async" data-i18n-attr="alt:nav.benefits" />
+      <img src="assets/images/Lynn about me photo.jpg" alt="About Me" class="nav-overlay__photo-img" data-index="3" loading="lazy" decoding="async" data-i18n-attr="alt:nav.about" />
+      <img src="assets/images/contact photo.jpg" alt="Contact" class="nav-overlay__photo-img" data-index="4" loading="lazy" decoding="async" data-i18n-attr="alt:nav.contact" />
     </div>
 
     <div class="nav-overlay__panel nav-overlay__panel--right">
       <div class="nav-overlay__inner">
         <div class="nav-overlay__brand-block nav-overlay__brand-block--mobile">
-          <span class="nav-overlay__logo-title">LMW Travel</span>
-          <span class="nav-overlay__logo-subtitle">By: Lynn Megan Wijngaard</span>
+          <span class="nav-overlay__logo-title" data-i18n="common.brand">LMW Travel</span>
+          <span class="nav-overlay__logo-subtitle" data-i18n="common.byLine">By: Lynn Megan Wijngaard</span>
         </div>
         <nav class="nav-overlay__list" role="navigation" aria-label="Main navigation">
-          <a href="about.html" class="nav-overlay__link" data-photo="3">About Me</a>
-          <a href="whatido.html" class="nav-overlay__link" data-photo="1">What I Do</a>
-          <a href="benefits.html" class="nav-overlay__link" data-photo="2">Benefits &amp; Partnerships</a>
-          <a href="contact.html" class="nav-overlay__link" data-photo="4">Contact</a>
+          <a href="about.html" class="nav-overlay__link" data-photo="3" data-i18n="nav.about">About Me</a>
+          <a href="whatido.html" class="nav-overlay__link" data-photo="1" data-i18n="nav.whatIDo">What I Do</a>
+          <a href="benefits.html" class="nav-overlay__link" data-photo="2" data-i18n="nav.benefits">Benefits &amp; Partnerships</a>
+          <a href="contact.html" class="nav-overlay__link" data-photo="4" data-i18n="nav.contact">Contact</a>
         </nav>
       </div>
       <div class="nav-overlay__lang">
@@ -121,138 +124,120 @@
   <main>
 
     <!-- ======== Hero Section ======== -->
-    <section class="wid-hero" aria-label="What I Do">
+    <section class="wid-hero" aria-label="What I Do" data-i18n-attr="aria-label:whatido.hero.aria">
 
       <div class="wid-hero__image" aria-hidden="true"></div>
       <div class="wid-hero__overlay" aria-hidden="true"></div>
 
       <div class="wid-hero__content">
-        <span class="wid-hero__label">Services</span>
-        <h1 class="wid-hero__title">What I Do</h1>
+        <span class="wid-hero__label" data-i18n="whatido.hero.label">Services</span>
+        <h1 class="wid-hero__title" data-i18n="whatido.hero.title">What I Do</h1>
       </div>
 
       <div class="wid-hero__scroll" aria-hidden="true">
-        <span class="wid-hero__scroll-label">Scroll</span>
+        <span class="wid-hero__scroll-label" data-i18n="whatido.hero.scroll">Scroll</span>
         <span class="wid-hero__scroll-line"></span>
       </div>
 
     </section>
 
+    <!-- ======== Specialties ======== -->
+    <section class="wid-specialties" aria-label="Specialties" data-i18n-attr="aria-label:whatido.specialties.aria">
+      <div class="wid-specialties__inner" data-reveal>
+        <span class="wid-specialties__eyebrow" data-i18n="whatido.specialties.eyebrow">Specialties</span>
+        <h2 class="wid-specialties__heading" data-i18n="whatido.specialties.heading">What I’m Known For</h2>
+        <p class="wid-specialties__subhead" data-i18n="whatido.specialties.subhead">These are the trips I love to build, the ones where the details matter and the pace feels just right.</p>
+        <div class="wid-specialties__line" aria-hidden="true"></div>
+      </div>
+
+      <div class="wid-specialties__carousel" aria-label="Swipe through specialties" data-i18n-attr="aria-label:whatido.specialties.carouselAria">
+        <div class="wid-specialties__track" aria-label="Specialties carousel" data-wid-carousel data-i18n-attr="aria-label:whatido.specialties.carouselAria">
+          <article class="wid-spec-card wid-spec-card--honeymoon" data-reveal>
+          <div class="wid-spec-card__media">
+            <img src="assets/images/IMG_0547.jpeg" alt="Honeymoon travel" loading="lazy" decoding="async" />
+          </div>
+          <div class="wid-spec-card__content">
+            <h3 class="wid-spec-card__title" data-i18n="whatido.card.honeymoons.title">Honeymoons</h3>
+            <p class="wid-spec-card__desc" data-i18n="whatido.card.honeymoons.desc">Romantic, yes, but never cheesy. I’ll choose the right hotel and the right room, then shape the days so it feels effortless.</p>
+          </div>
+          </article>
+
+          <article class="wid-spec-card" data-reveal>
+          <div class="wid-spec-card__media">
+            <img src="assets/images/cruisehip.jpg" alt="Cruise travel" loading="lazy" decoding="async" />
+          </div>
+          <div class="wid-spec-card__content">
+            <h3 class="wid-spec-card__title" data-i18n="whatido.card.cruises.title">Cruises</h3>
+            <p class="wid-spec-card__desc" data-i18n="whatido.card.cruises.desc">The ship matters as much as the route. I’ll match you properly, then take care of the details around it so it all flows.</p>
+          </div>
+          </article>
+
+          <article class="wid-spec-card wid-spec-card--business" data-reveal>
+          <div class="wid-spec-card__media">
+            <img src="assets/images/image00050.jpeg" alt="Business travel" loading="lazy" decoding="async" />
+          </div>
+          <div class="wid-spec-card__content">
+            <h3 class="wid-spec-card__title" data-i18n="whatido.card.business.title">Business</h3>
+            <p class="wid-spec-card__desc" data-i18n="whatido.card.business.desc">Tight schedule, no room for drama. I’ll keep it sharp, reliable, and comfortable, with backup plans ready if things shift.</p>
+          </div>
+          </article>
+
+          <article class="wid-spec-card" data-reveal>
+          <div class="wid-spec-card__media">
+            <img src="assets/images/image00028.jpeg" alt="Last-minute travel" loading="lazy" decoding="async" />
+          </div>
+          <div class="wid-spec-card__content">
+            <h3 class="wid-spec-card__title" data-i18n="whatido.card.lastMinute.title">Last Minute</h3>
+            <p class="wid-spec-card__desc" data-i18n="whatido.card.lastMinute.desc">Leaving soon? Perfect. I’ll move fast, filter the noise, and lock in something that still feels considered.</p>
+          </div>
+          </article>
+
+          <article class="wid-spec-card" data-reveal>
+          <div class="wid-spec-card__media">
+            <img src="assets/images/friends.jpeg" alt="Friends trips" loading="lazy" decoding="async" />
+          </div>
+          <div class="wid-spec-card__content">
+            <h3 class="wid-spec-card__title" data-i18n="whatido.card.friends.title">Friends Trips</h3>
+            <p class="wid-spec-card__desc" data-i18n="whatido.card.friends.desc">Great trips with friends need the right energy. I’ll plan it so it’s fun, smooth, and nobody ends up “organising” the whole time.</p>
+          </div>
+          </article>
+
+          <article class="wid-spec-card" data-reveal>
+            <div class="wid-spec-card__media">
+              <img src="assets/images/family.jpeg" alt="Family trips" loading="lazy" decoding="async" />
+            </div>
+            <div class="wid-spec-card__content">
+              <h3 class="wid-spec-card__title" data-i18n="whatido.card.family.title">Family Trips</h3>
+              <p class="wid-spec-card__desc" data-i18n="whatido.card.family.desc">I’ll make it easy for everyone, the right room setup, simple logistics, and enough downtime so it actually feels like a holiday.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="wid-specialties__pagination" aria-label="Specialties pagination" data-wid-pagination data-i18n-attr="aria-label:whatido.specialties.paginationAria"></div>
+      </div>
+
+      <div class="wid-specialties__cta" data-reveal>
+        <a href="contact.html" class="wid-cta__btn" data-i18n="whatido.specialties.contactButton">Contact Me</a>
+      </div>
+    </section>
+
     <!-- ======== Intro — What Sets Lynn Apart ======== -->
-    <section class="wid-intro" aria-label="Introduction">
+    <section class="wid-intro wid-intro--image" aria-label="Introduction" data-i18n-attr="aria-label:whatido.approach.aria">
+      <div class="wid-intro__bg" aria-hidden="true"></div>
+      <div class="wid-intro__overlay" aria-hidden="true"></div>
       <div class="wid-intro__inner" data-reveal>
-        <span class="wid-intro__eyebrow">The Approach</span>
-        <h2 class="wid-intro__heading">Travel That<br>Revolves Around You</h2>
+        <span class="wid-intro__eyebrow" data-i18n="whatido.approach.eyebrow">The Approach</span>
+        <h2 class="wid-intro__heading" data-i18n="whatido.approach.heading">Travel That<br>Revolves Around You</h2>
         <div class="wid-intro__line" aria-hidden="true"></div>
       </div>
     </section>
 
-    <!-- ======== Services Grid — How I Can Help ======== -->
-    <section class="wid-services" aria-label="Services">
-      <div class="wid-services__bg" aria-hidden="true"></div>
-      <div class="wid-services__overlay" aria-hidden="true"></div>
-
-      <div class="wid-services__inner">
-        <div class="wid-services__header" data-reveal>
-          <span class="wid-services__eyebrow">Specialities</span>
-          <h2 class="wid-services__heading">What I Specialise In</h2>
-        </div>
-
-        <div class="wid-specialities" aria-label="Specialities carousel">
-          <div class="wid-specialities__track" id="specialities-track" aria-live="off">
-
-          <article class="wid-card wid-card--speciality" data-reveal>
-            <div class="wid-card__media" aria-hidden="true">
-              <img src="assets/images/honeymoon.jpeg" alt="" decoding="async" loading="lazy" />
-              <div class="wid-card__media-overlay" aria-hidden="true"></div>
-            </div>
-            <div class="wid-card__content">
-              <h3 class="wid-card__title">Honeymoon</h3>
-              <p class="wid-card__phrase">The kind of honeymoon you’ll talk about for years.</p>
-              <div class="wid-card__line" aria-hidden="true"></div>
-            </div>
-          </article>
-
-          <article class="wid-card wid-card--speciality" data-reveal>
-            <div class="wid-card__media" aria-hidden="true">
-              <img src="assets/images/cruise.jpeg" alt="" decoding="async" loading="lazy" />
-              <div class="wid-card__media-overlay" aria-hidden="true"></div>
-            </div>
-            <div class="wid-card__content">
-              <h3 class="wid-card__title">Cruises</h3>
-              <p class="wid-card__phrase">Everything handled, all you have to do is enjoy.</p>
-              <div class="wid-card__line" aria-hidden="true"></div>
-            </div>
-          </article>
-
-          <article class="wid-card wid-card--speciality" data-reveal>
-            <div class="wid-card__media" aria-hidden="true">
-              <img src="assets/images/family.jpeg" alt="" decoding="async" loading="lazy" />
-              <div class="wid-card__media-overlay" aria-hidden="true"></div>
-            </div>
-            <div class="wid-card__content">
-              <h3 class="wid-card__title">Family</h3>
-              <p class="wid-card__phrase">Plans that keep everyone happy, and you relaxed.</p>
-              <div class="wid-card__line" aria-hidden="true"></div>
-            </div>
-          </article>
-
-          <article class="wid-card wid-card--speciality" data-reveal>
-            <div class="wid-card__media" aria-hidden="true">
-              <img src="assets/images/friends.jpeg" alt="" decoding="async" loading="lazy" />
-              <div class="wid-card__media-overlay" aria-hidden="true"></div>
-            </div>
-            <div class="wid-card__content">
-              <h3 class="wid-card__title">Friends</h3>
-              <p class="wid-card__phrase">Great memories, with the logistics taken care of.</p>
-              <div class="wid-card__line" aria-hidden="true"></div>
-            </div>
-          </article>
-
-          <article class="wid-card wid-card--speciality" data-reveal>
-            <div class="wid-card__media" aria-hidden="true">
-              <img src="assets/images/business.jpeg" alt="" decoding="async" loading="lazy" />
-              <div class="wid-card__media-overlay" aria-hidden="true"></div>
-            </div>
-            <div class="wid-card__content">
-              <h3 class="wid-card__title">Business</h3>
-              <p class="wid-card__phrase">On time, well placed, and properly looked after.</p>
-              <div class="wid-card__line" aria-hidden="true"></div>
-            </div>
-          </article>
-
-          <article class="wid-card wid-card--speciality" data-reveal>
-            <div class="wid-card__media" aria-hidden="true">
-              <img src="assets/images/lastminute.jpeg" alt="" decoding="async" loading="lazy" />
-              <div class="wid-card__media-overlay" aria-hidden="true"></div>
-            </div>
-            <div class="wid-card__content">
-              <h3 class="wid-card__title">Last Minute</h3>
-              <p class="wid-card__phrase">Yes, we can still make it happen, beautifully.</p>
-              <div class="wid-card__line" aria-hidden="true"></div>
-            </div>
-          </article>
-
-          </div>
-
-          <div class="wid-specialities__indicators" id="specialities-indicators" aria-hidden="true">
-            <span class="wid-specialities__indicator wid-specialities__indicator--active"></span>
-            <span class="wid-specialities__indicator"></span>
-            <span class="wid-specialities__indicator"></span>
-            <span class="wid-specialities__indicator"></span>
-            <span class="wid-specialities__indicator"></span>
-            <span class="wid-specialities__indicator"></span>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- ======== Process — How It Works ======== -->
-    <section class="wid-process" aria-label="How it works">
+    <section class="wid-process" aria-label="How it works" data-i18n-attr="aria-label:whatido.process.aria">
       <div class="wid-process__inner">
         <div class="wid-process__header" data-reveal>
-          <span class="wid-process__eyebrow">The Process</span>
-          <h2 class="wid-process__heading">How It Works</h2>
+          <span class="wid-process__eyebrow" data-i18n="whatido.process.eyebrow">The Process</span>
+          <h2 class="wid-process__heading" data-i18n="whatido.process.heading">How It Works</h2>
           <div class="wid-process__line" aria-hidden="true"></div>
         </div>
 
@@ -260,26 +245,26 @@
 
           <div class="wid-step" data-reveal>
             <span class="wid-step__number">01</span>
-            <h3 class="wid-step__title">Discovery</h3>
-            <p class="wid-step__desc">The discovery stage is where we become acquainted and thoughtfully explore your vision and desires.</p>
+            <h3 class="wid-step__title" data-i18n="whatido.process.step1.title">Discovery</h3>
+            <p class="wid-step__desc" data-i18n="whatido.process.step1.desc">The discovery stage is where we become acquainted and thoughtfully explore your vision and desires.</p>
           </div>
 
           <div class="wid-step" data-reveal>
             <span class="wid-step__number">02</span>
-            <h3 class="wid-step__title">Curation</h3>
-            <p class="wid-step__desc">I will then curate a bespoke proposal, thoughtfully tailored to your needs.</p>
+            <h3 class="wid-step__title" data-i18n="whatido.process.step2.title">Curation</h3>
+            <p class="wid-step__desc" data-i18n="whatido.process.step2.desc">I will then curate a bespoke proposal, thoughtfully tailored to your needs.</p>
           </div>
 
           <div class="wid-step" data-reveal>
             <span class="wid-step__number">03</span>
-            <h3 class="wid-step__title">Refinement</h3>
-            <p class="wid-step__desc">During the refinement stage, we review any final details and thoughtfully explore alternative options where desired.</p>
+            <h3 class="wid-step__title" data-i18n="whatido.process.step3.title">Refinement</h3>
+            <p class="wid-step__desc" data-i18n="whatido.process.step3.desc">During the refinement stage, we review any final details and thoughtfully explore alternative options where desired.</p>
           </div>
 
           <div class="wid-step" data-reveal>
             <span class="wid-step__number">04</span>
-            <h3 class="wid-step__title">Experience</h3>
-            <p class="wid-step__desc">Finally, you step into an experience thoughtfully crafted behind the scenes, with personalised touches that elevate every moment.</p>
+            <h3 class="wid-step__title" data-i18n="whatido.process.step4.title">Experience</h3>
+            <p class="wid-step__desc" data-i18n="whatido.process.step4.desc">Finally, you step into an experience thoughtfully crafted behind the scenes, with personalised touches that elevate every moment.</p>
           </div>
 
         </div>
@@ -287,24 +272,23 @@
     </section>
 
     <!-- ======== Showcase — Why Clients Choose Me ======== -->
-    <section class="wid-showcase" aria-label="Personal touch">
+    <section class="wid-showcase" aria-label="Personal touch" data-i18n-attr="aria-label:whatido.showcase.aria">
 
       <div class="wid-showcase__image" data-reveal>
         <img
           src="assets/images/Lynn Final Photos-9.jpg"
           alt="Lynn curating a luxury travel experience"
           loading="lazy"
+          decoding="async"
         />
-        <span class="wid-showcase__caption">LMW Travel — Personal Touch</span>
+        <span class="wid-showcase__caption" data-i18n="whatido.showcase.caption">LMW Travel, personal touch</span>
       </div>
 
       <div class="wid-showcase__content" data-reveal>
-        <span class="wid-showcase__eyebrow">The Difference</span>
-        <h2 class="wid-showcase__heading">Why Clients<br>Choose Me</h2>
+        <span class="wid-showcase__eyebrow" data-i18n="whatido.showcase.eyebrow">The Difference</span>
+        <h2 class="wid-showcase__heading" data-i18n="whatido.showcase.heading">Why Clients<br>Choose Me</h2>
         <div class="wid-showcase__line" aria-hidden="true"></div>
-        <p class="wid-showcase__body">
-          A stay is never just a night’s sleep. The right property becomes your home away from home, where you feel genuinely welcomed and where your presence is valued far beyond your reservation. I take the time to understand what truly brings you joy, allowing me to match you with places that feel effortlessly right. Each stay is carefully selected to reflect your preferences, your rhythm and your expectations. After all, when investing in something exceptional, the experience should be just as memorable. Seamless, personal and thoughtfully considered from the very first moment, whether it is a last-minute booking or an idea that gradually becomes reality.
-        </p>
+        <p class="wid-showcase__body" data-i18n="whatido.showcase.body">A stay is never just a bed for the night. I take the time to learn what you actually care about, then I match you with places that feel instantly right. It should feel seamless and personal from the first message to the moment you check out, whether it’s last minute or something we build over time.</p>
       </div>
 
     </section>
@@ -312,11 +296,9 @@
     <!-- ======== Call to Action ======== -->
     <section class="wid-cta" aria-label="Get started">
       <div class="wid-cta__inner" data-reveal>
-        <h2 class="wid-cta__heading">Ready to Start Planning?</h2>
-        <p class="wid-cta__desc">
-          Share a few details (where, when, and what matters most) and I’ll follow up with next steps.
-        </p>
-        <a href="mailto:lynn@lmwtravel.com" class="wid-cta__btn">Get in Touch</a>
+        <h2 class="wid-cta__heading" data-i18n="whatido.cta.heading">Ready to Start Planning?</h2>
+        <p class="wid-cta__desc" data-i18n="whatido.cta.body">Share a few details (where, when, and what matters most) and I’ll follow up with next steps.</p>
+        <a href="mailto:lynn@lmwtravel.com" class="wid-cta__btn" data-i18n="whatido.cta.button">Get in Touch</a>
       </div>
     </section>
 
@@ -327,32 +309,32 @@
     <div class="site-footer__card">
       <div class="site-footer__top" data-reveal>
         <div class="site-footer__brand">
-          <span class="site-footer__logo">LMW Travel</span>
-          <span class="site-footer__tagline">By: Lynn Megan Wijngaard</span>
+          <span class="site-footer__logo" data-i18n="common.brand">LMW Travel</span>
+          <span class="site-footer__tagline" data-i18n="common.byLine">By: Lynn Megan Wijngaard</span>
         </div>
         <nav class="site-footer__links" aria-label="Footer navigation">
-          <a href="index.html" class="site-footer__link">Home</a>
-          <a href="about.html" class="site-footer__link">About</a>
-          <a href="whatido.html" class="site-footer__link">What&nbsp;I&nbsp;Do</a>
-          <a href="contact.html" class="site-footer__link">Contact</a>
+          <a href="index.html" class="site-footer__link" data-i18n="footer.home">Home</a>
+          <a href="about.html" class="site-footer__link" data-i18n="footer.about">About</a>
+          <a href="whatido.html" class="site-footer__link" data-i18n="footer.whatido">What&nbsp;I&nbsp;Do</a>
+          <a href="contact.html" class="site-footer__link" data-i18n="footer.contact">Contact</a>
         </nav>
       </div>
       <div class="site-footer__bottom">
-        <span class="site-footer__copy">&copy; 2026 LMW Travel. All rights reserved.</span>
+        <span class="site-footer__copy" data-i18n="footer.copyright">&copy; 2026 LMW Travel. All rights reserved.</span>
         <div class="site-footer__social">
-          <a href="https://www.instagram.com/lynn_lmwtravel/" target="_blank" rel="noopener noreferrer" class="site-footer__social-link" aria-label="Instagram">Instagram</a>
-          <a href="https://www.linkedin.com/in/lynn-megan-wijngaard-82597711a/" target="_blank" rel="noopener noreferrer" class="site-footer__social-link" aria-label="LinkedIn">LinkedIn</a>
-          <a href="https://wa.me/351913564962?text=Hi%20Lynn%2C%20I%E2%80%99d%20love%20some%20help%20planning%20my%20next%20trip%20%E2%80%94%20looking%20forward%20to%20hearing%20from%20you!" target="_blank" rel="noopener noreferrer" class="site-footer__social-link" aria-label="WhatsApp">WhatsApp</a>
+          <a href="https://www.instagram.com/lynn_lmwtravel/" target="_blank" rel="noopener noreferrer" class="site-footer__social-link" aria-label="Instagram" data-i18n="social.instagram" data-i18n-attr="aria-label:social.instagram">Instagram</a>
+          <a href="https://www.linkedin.com/in/lynn-megan-wijngaard-82597711a/" target="_blank" rel="noopener noreferrer" class="site-footer__social-link" aria-label="LinkedIn" data-i18n="social.linkedin" data-i18n-attr="aria-label:social.linkedin">LinkedIn</a>
+          <a href="https://wa.me/351913564962?text=Hi%20Lynn%2C%20I%E2%80%99d%20love%20some%20help%20planning%20my%20next%20trip%20%E2%80%94%20looking%20forward%20to%20hearing%20from%20you!" target="_blank" rel="noopener noreferrer" class="site-footer__social-link" aria-label="WhatsApp" data-i18n="social.whatsapp" data-i18n-attr="aria-label:social.whatsapp">WhatsApp</a>
         </div>
       </div>
       <div class="site-footer__credit">
-        <span class="site-footer__credit-text">Developed by <a href="https://www.cutstudios.pt" target="_blank" rel="noopener noreferrer" class="site-footer__credit-link" aria-label="Cut Studios"><span class="site-footer__cut-logo" aria-hidden="true"></span>Cut Studios</a></span>
+        <span class="site-footer__credit-text"><span data-i18n="footer.developedBy">Developed by</span> <a href="https://www.cutstudios.pt" target="_blank" rel="noopener noreferrer" class="site-footer__credit-link" aria-label="Cut Studios"><span class="site-footer__cut-logo" aria-hidden="true"></span>Cut Studios</a></span>
       </div>
     </div>
   </footer>
 
   <!-- ======== Back to Top ======== -->
-  <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top">
+  <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top" data-i18n-attr="aria-label:a11y.backToTop">
     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
       <path d="M7 12V2"/>
       <path d="M2 6l5-5 5 5"/>

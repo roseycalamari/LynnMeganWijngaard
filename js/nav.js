@@ -164,7 +164,8 @@
 
     hamburger.classList.add('hamburger--active');
     hamburger.setAttribute('aria-expanded', 'true');
-    hamburger.setAttribute('aria-label', 'Close navigation');
+    const closeLabel = (window.LMW_I18N && window.LMW_I18N.t && window.LMW_I18N.t('a11y.closeNav')) || 'Close navigation';
+    hamburger.setAttribute('aria-label', closeLabel);
 
     overlay.classList.add('nav-overlay--open');
     header.classList.add('header--menu-open');
@@ -182,7 +183,8 @@
 
     hamburger.classList.remove('hamburger--active');
     hamburger.setAttribute('aria-expanded', 'false');
-    hamburger.setAttribute('aria-label', 'Open navigation');
+    const openLabel = (window.LMW_I18N && window.LMW_I18N.t && window.LMW_I18N.t('a11y.openNav')) || 'Open navigation';
+    hamburger.setAttribute('aria-label', openLabel);
 
     overlay.classList.remove('nav-overlay--open');
     header.classList.remove('header--menu-open');
@@ -240,17 +242,6 @@
     });
     link.addEventListener('mouseleave', () => {
       setActivePhoto(0);
-    });
-  });
-
-  /* ──────────────────────────────────────────
-     Language Selector
-  ────────────────────────────────────────── */
-
-  langBtns.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      langBtns.forEach((b) => b.classList.remove('nav-overlay__lang-btn--active'));
-      btn.classList.add('nav-overlay__lang-btn--active');
     });
   });
 

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="description" content="Exclusive travel perks, trusted partnerships, and the advantages of booking with LMW Travel.">
-  <title>Benefits &amp; Partnerships — LMW Travel</title>
+  <meta name="description" content="Exclusive travel perks, trusted partnerships, and the advantages of booking with LMW Travel." data-i18n-attr="content:meta.benefits.description">
+  <title data-i18n="meta.benefits.title">Benefits &amp; Partnerships, LMW Travel</title>
 
   <!-- Stylesheets (order matters) -->
   <link rel="stylesheet" href="css/reset.css">
@@ -21,6 +21,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <noscript><style>.benefits-hero--ready .benefits-hero__label,.benefits-hero--ready .benefits-hero__title,.benefits-hero--ready .benefits-hero__subtitle,.benefits-hero--ready .benefits-hero__scroll{opacity:1!important;transform:none!important;animation:none!important}.header{visibility:visible!important}[data-reveal]{opacity:1!important;transform:none!important}</style></noscript>
+
+  <script src="js/i18n.js" defer></script>
 </head>
 <body class="benefits-page">
 
@@ -34,19 +36,19 @@
     </div>
 
     <div class="header__notch-center">
-      <a href="index.html" class="header__notch" aria-label="LMW Travel — Home">
+      <a href="index.html" class="header__notch" aria-label="LMW Travel, home" data-i18n-attr="aria-label:a11y.home">
         <span class="header__notch-label">LMW TRAVEL</span>
       </a>
     </div>
 
     <div class="header__bar">
 
-      <a href="contact.html" class="header__contact" aria-label="Get in touch with Lynn">
+      <a href="contact.html" class="header__contact" aria-label="Get in touch with Lynn" data-i18n-attr="aria-label:nav.getInTouch">
         <svg class="header__contact-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
           <rect x="2" y="4" width="20" height="16" rx="2"/>
           <path d="M22 4L12 13 2 4"/>
         </svg>
-        <span class="header__contact-label">Contact</span>
+        <span class="header__contact-label" data-i18n="nav.contact">Contact</span>
       </a>
 
       <button
@@ -55,6 +57,7 @@
         aria-label="Open navigation"
         aria-expanded="false"
         aria-controls="nav-overlay"
+        data-i18n-attr="aria-label:a11y.openNav"
       >
         <span class="hamburger__line" aria-hidden="true"></span>
         <span class="hamburger__line" aria-hidden="true"></span>
@@ -65,47 +68,47 @@
   </header>
 
   <!-- ======== Navigation Overlay ======== -->
-  <div class="nav-overlay" id="nav-overlay" role="dialog" aria-modal="true" aria-label="Navigation menu">
+  <div class="nav-overlay" id="nav-overlay" role="dialog" aria-modal="true" aria-label="Navigation menu" data-i18n-attr="aria-label:a11y.navDialog">
 
     <div class="nav-overlay__panel nav-overlay__panel--left">
       <div class="nav-overlay__inner">
         <div class="nav-overlay__brand-block">
-          <span class="nav-overlay__logo-title">LMW Travel</span>
-          <span class="nav-overlay__logo-subtitle">By: Lynn Megan Wijngaard</span>
+          <span class="nav-overlay__logo-title" data-i18n="common.brand">LMW Travel</span>
+          <span class="nav-overlay__logo-subtitle" data-i18n="common.byLine">By: Lynn Megan Wijngaard</span>
         </div>
         <div class="nav-overlay__contact-block">
-          <h3 class="nav-overlay__contact-heading">Get in Touch</h3>
+          <h3 class="nav-overlay__contact-heading" data-i18n="nav.getInTouchHeading">Get in Touch</h3>
           <p class="nav-overlay__contact-name">Lynn Megan Wijngaard</p>
           <a href="mailto:lynn@lmwtravel.com" class="nav-overlay__contact-link">lynn@lmwtravel.com</a>
           <a href="tel:+351913564962" class="nav-overlay__contact-link">+351 913 564 962</a>
         </div>
         <div class="nav-overlay__social-block">
-          <a href="https://www.instagram.com/lynn_lmwtravel/" target="_blank" rel="noopener noreferrer" class="nav-overlay__social-link" aria-label="Instagram">Instagram</a>
-          <a href="https://www.linkedin.com/in/lynn-megan-wijngaard-82597711a/" target="_blank" rel="noopener noreferrer" class="nav-overlay__social-link" aria-label="LinkedIn">LinkedIn</a>
-          <a href="https://wa.me/351913564962?text=Hi%20Lynn%2C%20I%E2%80%99d%20love%20some%20help%20planning%20my%20next%20trip%20%E2%80%94%20looking%20forward%20to%20hearing%20from%20you!" target="_blank" rel="noopener noreferrer" class="nav-overlay__social-link" aria-label="WhatsApp">WhatsApp</a>
+          <a href="https://www.instagram.com/lynn_lmwtravel/" target="_blank" rel="noopener noreferrer" class="nav-overlay__social-link" aria-label="Instagram" data-i18n="social.instagram" data-i18n-attr="aria-label:social.instagram">Instagram</a>
+          <a href="https://www.linkedin.com/in/lynn-megan-wijngaard-82597711a/" target="_blank" rel="noopener noreferrer" class="nav-overlay__social-link" aria-label="LinkedIn" data-i18n="social.linkedin" data-i18n-attr="aria-label:social.linkedin">LinkedIn</a>
+          <a href="https://wa.me/351913564962?text=Hi%20Lynn%2C%20I%E2%80%99d%20love%20some%20help%20planning%20my%20next%20trip%20%E2%80%94%20looking%20forward%20to%20hearing%20from%20you!" target="_blank" rel="noopener noreferrer" class="nav-overlay__social-link" aria-label="WhatsApp" data-i18n="social.whatsapp" data-i18n-attr="aria-label:social.whatsapp">WhatsApp</a>
         </div>
       </div>
     </div>
 
     <div class="nav-overlay__photo">
-      <img src="assets/images/lynn photo for off canvas menu.jpg" alt="LMW Travel" class="nav-overlay__photo-img nav-overlay__photo-img--active" data-index="0" />
-      <img src="assets/images/what i do photo.jpg" alt="What I Do" class="nav-overlay__photo-img" data-index="1" />
-      <img src="assets/images/benefits.jpg" alt="Benefits & Partnerships" class="nav-overlay__photo-img" data-index="2" />
-      <img src="assets/images/Lynn about me photo.jpg" alt="About Me" class="nav-overlay__photo-img" data-index="3" />
-      <img src="assets/images/contact photo.jpg" alt="Contact" class="nav-overlay__photo-img" data-index="4" />
+      <img src="assets/images/lynn photo for off canvas menu.jpg" alt="LMW Travel" class="nav-overlay__photo-img nav-overlay__photo-img--active" data-index="0" loading="lazy" decoding="async" data-i18n-attr="alt:common.brand" />
+      <img src="assets/images/what i do photo.jpg" alt="What I Do" class="nav-overlay__photo-img" data-index="1" loading="lazy" decoding="async" data-i18n-attr="alt:nav.whatIDo" />
+      <img src="assets/images/benefits.jpg" alt="Benefits & Partnerships" class="nav-overlay__photo-img" data-index="2" loading="lazy" decoding="async" data-i18n-attr="alt:nav.benefits" />
+      <img src="assets/images/Lynn about me photo.jpg" alt="About Me" class="nav-overlay__photo-img" data-index="3" loading="lazy" decoding="async" data-i18n-attr="alt:nav.about" />
+      <img src="assets/images/contact photo.jpg" alt="Contact" class="nav-overlay__photo-img" data-index="4" loading="lazy" decoding="async" data-i18n-attr="alt:nav.contact" />
     </div>
 
     <div class="nav-overlay__panel nav-overlay__panel--right">
       <div class="nav-overlay__inner">
         <div class="nav-overlay__brand-block nav-overlay__brand-block--mobile">
-          <span class="nav-overlay__logo-title">LMW Travel</span>
-          <span class="nav-overlay__logo-subtitle">By: Lynn Megan Wijngaard</span>
+          <span class="nav-overlay__logo-title" data-i18n="common.brand">LMW Travel</span>
+          <span class="nav-overlay__logo-subtitle" data-i18n="common.byLine">By: Lynn Megan Wijngaard</span>
         </div>
         <nav class="nav-overlay__list" role="navigation" aria-label="Main navigation">
-          <a href="about.html" class="nav-overlay__link" data-photo="3">About Me</a>
-          <a href="whatido.html" class="nav-overlay__link" data-photo="1">What I Do</a>
-          <a href="benefits.html" class="nav-overlay__link" data-photo="2">Benefits &amp; Partnerships</a>
-          <a href="contact.html" class="nav-overlay__link" data-photo="4">Contact</a>
+          <a href="about.html" class="nav-overlay__link" data-photo="3" data-i18n="nav.about">About Me</a>
+          <a href="whatido.html" class="nav-overlay__link" data-photo="1" data-i18n="nav.whatIDo">What I Do</a>
+          <a href="benefits.html" class="nav-overlay__link" data-photo="2" data-i18n="nav.benefits">Benefits &amp; Partnerships</a>
+          <a href="contact.html" class="nav-overlay__link" data-photo="4" data-i18n="nav.contact">Contact</a>
         </nav>
       </div>
       <div class="nav-overlay__lang">
@@ -121,28 +124,26 @@
   <main>
 
     <!-- ======== Hero Section ======== -->
-    <section class="benefits-hero" aria-label="Benefits and partnerships">
+    <section class="benefits-hero" aria-label="Benefits and partnerships" data-i18n-attr="aria-label:benefits.hero.aria">
 
       <div class="benefits-hero__image" aria-hidden="true"></div>
       <div class="benefits-hero__overlay" aria-hidden="true"></div>
 
       <div class="benefits-hero__content">
-        <span class="benefits-hero__label">Exclusive Advantages</span>
-        <h1 class="benefits-hero__title">Benefits &amp; Partnerships</h1>
-        <p class="benefits-hero__subtitle">
-          Unlock exclusive perks, VIP access, and curated luxury through our trusted partners.
-        </p>
+        <span class="benefits-hero__label" data-i18n="benefits.hero.label">Exclusive Advantages</span>
+        <h1 class="benefits-hero__title" data-i18n="benefits.hero.title">Benefits &amp; Partnerships</h1>
+        <p class="benefits-hero__subtitle" data-i18n="benefits.hero.subtitle">Unlock exclusive perks, VIP access, and curated luxury through our trusted partners.</p>
       </div>
 
       <div class="benefits-hero__scroll" aria-hidden="true">
-        <span class="benefits-hero__scroll-label">Scroll</span>
+        <span class="benefits-hero__scroll-label" data-i18n="benefits.hero.scroll">Scroll</span>
         <span class="benefits-hero__scroll-line"></span>
       </div>
 
     </section>
 
     <!-- ======== Perks & Partners — Combined Split Section ======== -->
-    <section class="benefits-showcase" aria-label="Perks and trusted partners">
+    <section class="benefits-showcase" aria-label="Perks and trusted partners" data-i18n-attr="aria-label:benefits.showcase.aria">
 
       <!-- Left: image panel -->
       <div class="benefits-showcase__image" data-reveal>
@@ -150,80 +151,81 @@
           src="assets/images/ourperks.jpeg"
           alt="Luxury hotel interior"
           class="benefits-showcase__img"
+          loading="lazy"
+          decoding="async"
+          data-i18n-attr="alt:benefits.showcase.imgAlt"
         />
-        <span class="benefits-showcase__caption">LMW Travel — Perks</span>
+        <span class="benefits-showcase__caption" data-i18n="benefits.showcase.caption">LMW Travel, perks</span>
       </div>
 
       <!-- Right: content panel -->
       <div class="benefits-showcase__content" data-reveal>
 
         <div class="benefits-showcase__perks">
-          <span class="benefits-showcase__eyebrow">Your Perks</span>
-          <h2 class="benefits-showcase__heading">The Perks</h2>
-          <p class="benefits-showcase__desc">
-            Handpicked perks and one-of-a-kind touches turn your trip into an experience.
-          </p>
+          <span class="benefits-showcase__eyebrow" data-i18n="benefits.showcase.eyebrow">Your Perks</span>
+          <h2 class="benefits-showcase__heading" data-i18n="benefits.showcase.heading">The Perks</h2>
+          <p class="benefits-showcase__desc" data-i18n="benefits.showcase.desc">Handpicked perks and one-of-a-kind touches turn your trip into an experience.</p>
 
           <div class="benefits-showcase__pills">
 
             <span class="benefits-showcase__pill">
               <svg class="benefits-showcase__pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7v4a1 1 0 001 1h3m14-5v4a1 1 0 01-1 1h-3"/><rect x="2" y="4" width="20" height="6" rx="1"/><path d="M12 17V10"/><path d="M8 17h8"/></svg>
-              Room Upgrades
+              <span data-i18n="benefits.perk.roomUpgrades">Room Upgrades</span>
             </span>
 
             <span class="benefits-showcase__pill">
               <svg class="benefits-showcase__pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              Exclusive Experiences
+              <span data-i18n="benefits.perk.exclusiveExperiences">Exclusive Experiences</span>
             </span>
 
             <span class="benefits-showcase__pill">
               <svg class="benefits-showcase__pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><path d="M6 1v3"/><path d="M10 1v3"/><path d="M14 1v3"/></svg>
-              Complimentary Breakfast
+              <span data-i18n="benefits.perk.breakfast">Complimentary Breakfast</span>
             </span>
 
             <span class="benefits-showcase__pill">
               <svg class="benefits-showcase__pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-              Early Check-in
+              <span data-i18n="benefits.perk.earlyCheckIn">Early Check-in</span>
             </span>
 
             <span class="benefits-showcase__pill">
               <svg class="benefits-showcase__pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l-4 2"/></svg>
-              Late Check-out
+              <span data-i18n="benefits.perk.lateCheckOut">Late Check-out</span>
             </span>
 
             <span class="benefits-showcase__pill">
               <svg class="benefits-showcase__pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16l-5.74-9.94M14.31 16H2.83M16.62 12l-5.74 9.94"/></svg>
-              Spa Credits
+              <span data-i18n="benefits.perk.spaCredits">Spa Credits</span>
             </span>
 
             <span class="benefits-showcase__pill">
               <svg class="benefits-showcase__pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2l1.578 4.657A2 2 0 006.474 8H17.53a2 2 0 001.896-1.343L21 2"/><path d="M7 8v6a4 4 0 004 4h2a4 4 0 004-4V8"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="8" y1="22" x2="16" y2="22"/></svg>
-              Dining Credits
+              <span data-i18n="benefits.perk.diningCredits">Dining Credits</span>
             </span>
 
             <span class="benefits-showcase__pill">
               <svg class="benefits-showcase__pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12V8H6a2 2 0 01-2-2c0-1.1.9-2 2-2h12v4"/><path d="M4 6v12c0 1.1.9 2 2 2h14v-4"/><path d="M18 12a2 2 0 000 4h4v-4h-4z"/></svg>
-              Welcome Gifts
+              <span data-i18n="benefits.perk.welcomeGifts">Welcome Gifts</span>
             </span>
 
             <span class="benefits-showcase__pill">
               <svg class="benefits-showcase__pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17H4a2 2 0 01-2-2V5a2 2 0 012-2h16a2 2 0 012 2v10a2 2 0 01-2 2h-1"/><polygon points="12 15 17 21 7 21 12 15"/></svg>
-              Airport Transfers
+              <span data-i18n="benefits.perk.airportTransfers">Airport Transfers</span>
             </span>
 
             <span class="benefits-showcase__pill">
               <svg class="benefits-showcase__pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
-              VIP Status
+              <span data-i18n="benefits.perk.vipStatus">VIP Status</span>
             </span>
 
             <span class="benefits-showcase__pill">
               <svg class="benefits-showcase__pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
-              Exclusive Rates
+              <span data-i18n="benefits.perk.exclusiveRates">Exclusive Rates</span>
             </span>
 
             <span class="benefits-showcase__pill">
               <svg class="benefits-showcase__pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-              Personalized Itineraries
+              <span data-i18n="benefits.perk.itineraries">Personalized Itineraries</span>
             </span>
 
           </div>
@@ -304,64 +306,62 @@
     </section>
 
     <!-- ======== Why Book With Me ======== -->
-    <section class="benefits-compare" aria-label="Why book with LMW Travel">
+    <section class="benefits-compare" aria-label="Why book with LMW Travel" data-i18n-attr="aria-label:benefits.compare.aria">
       <div class="benefits-compare__bg" aria-hidden="true"></div>
       <div class="benefits-compare__overlay" aria-hidden="true"></div>
       <div class="benefits-compare__inner" data-reveal>
 
-        <span class="benefits-compare__eyebrow">The Difference</span>
-        <h2 class="benefits-compare__heading">Why Book With Me</h2>
-        <p class="benefits-compare__desc">
-          Lynn i need this info!!!
-        </p>
+        <span class="benefits-compare__eyebrow" data-i18n="benefits.compare.eyebrow">The Difference</span>
+        <h2 class="benefits-compare__heading" data-i18n="benefits.compare.heading">Why Book With Me</h2>
+        <p class="benefits-compare__desc" data-i18n="benefits.compare.desc"></p>
         <div class="benefits-compare__line" aria-hidden="true"></div>
 
         <table class="benefits-compare__table">
           <thead>
             <tr>
-              <th scope="col"><span class="visually-hidden">Feature</span></th>
-              <th scope="col">LMW Travel</th>
-              <th scope="col">Online Agency</th>
+              <th scope="col"><span class="visually-hidden" data-i18n="benefits.compare.featureVisuallyHidden">Feature</span></th>
+              <th scope="col" data-i18n="benefits.compare.colLMW">LMW Travel</th>
+              <th scope="col" data-i18n="benefits.compare.colOnline">Online Agency</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Best Available Rates</td>
+              <td data-i18n="benefits.compare.row1">Best Available Rates</td>
               <td><span class="benefits-compare__check"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2.5 7 5.5 10.5 11.5 3.5"/></svg></span></td>
               <td><span class="benefits-compare__check"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2.5 7 5.5 10.5 11.5 3.5"/></svg></span></td>
             </tr>
             <tr>
-              <td>Dedicated travel advisor</td>
+              <td data-i18n="benefits.compare.row2">Dedicated travel advisor</td>
               <td><span class="benefits-compare__check"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2.5 7 5.5 10.5 11.5 3.5"/></svg></span></td>
               <td><span class="benefits-compare__cross"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="2" y1="2" x2="10" y2="10"/><line x1="10" y1="2" x2="2" y2="10"/></svg></span></td>
             </tr>
             <tr>
-              <td>Receive benefits and exclusive perks</td>
+              <td data-i18n="benefits.compare.row3">Receive benefits and exclusive perks</td>
               <td><span class="benefits-compare__check"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2.5 7 5.5 10.5 11.5 3.5"/></svg></span></td>
               <td><span class="benefits-compare__cross"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="2" y1="2" x2="10" y2="10"/><line x1="10" y1="2" x2="2" y2="10"/></svg></span></td>
             </tr>
             <tr>
-              <td>Personalised recommendations</td>
+              <td data-i18n="benefits.compare.row4">Personalised recommendations</td>
               <td><span class="benefits-compare__check"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2.5 7 5.5 10.5 11.5 3.5"/></svg></span></td>
               <td><span class="benefits-compare__cross"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="2" y1="2" x2="10" y2="10"/><line x1="10" y1="2" x2="2" y2="10"/></svg></span></td>
             </tr>
             <tr>
-              <td>Direct support before &amp; during travel</td>
+              <td data-i18n="benefits.compare.row5">Direct support before &amp; during travel</td>
               <td><span class="benefits-compare__check"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2.5 7 5.5 10.5 11.5 3.5"/></svg></span></td>
               <td><span class="benefits-compare__cross"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="2" y1="2" x2="10" y2="10"/><line x1="10" y1="2" x2="2" y2="10"/></svg></span></td>
             </tr>
             <tr>
-              <td>Time saving and stress free</td>
+              <td data-i18n="benefits.compare.row6">Time saving and stress free</td>
               <td><span class="benefits-compare__check"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2.5 7 5.5 10.5 11.5 3.5"/></svg></span></td>
               <td><span class="benefits-compare__cross"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="2" y1="2" x2="10" y2="10"/><line x1="10" y1="2" x2="2" y2="10"/></svg></span></td>
             </tr>
             <tr>
-              <td>VIP treatment</td>
+              <td data-i18n="benefits.compare.row7">VIP treatment</td>
               <td><span class="benefits-compare__check"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2.5 7 5.5 10.5 11.5 3.5"/></svg></span></td>
               <td><span class="benefits-compare__cross"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="2" y1="2" x2="10" y2="10"/><line x1="10" y1="2" x2="2" y2="10"/></svg></span></td>
             </tr>
             <tr>
-              <td>Hotel recognition</td>
+              <td data-i18n="benefits.compare.row8">Hotel recognition</td>
               <td><span class="benefits-compare__check"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2.5 7 5.5 10.5 11.5 3.5"/></svg></span></td>
               <td><span class="benefits-compare__cross"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="2" y1="2" x2="10" y2="10"/><line x1="10" y1="2" x2="2" y2="10"/></svg></span></td>
             </tr>
@@ -374,11 +374,9 @@
     <!-- ======== Call to Action ======== -->
     <section class="benefits-cta" aria-label="Get started">
       <div class="benefits-cta__inner" data-reveal>
-        <h2 class="benefits-cta__heading">Start Planning Your Journey</h2>
-        <p class="benefits-cta__desc">
-          Tell me what you’re planning and what matters most — I’ll help map out the right next step.
-        </p>
-        <a href="mailto:lynn@lmwtravel.com" class="benefits-cta__btn">Get in Touch</a>
+        <h2 class="benefits-cta__heading" data-i18n="benefits.cta.heading">Start Planning Your Journey</h2>
+        <p class="benefits-cta__desc" data-i18n="benefits.cta.body">Tell me what you’re planning and what matters most, and I’ll help map out the right next step.</p>
+        <a href="mailto:lynn@lmwtravel.com" class="benefits-cta__btn" data-i18n="benefits.cta.button">Get in Touch</a>
       </div>
     </section>
 
@@ -389,32 +387,32 @@
     <div class="site-footer__card">
       <div class="site-footer__top" data-reveal>
         <div class="site-footer__brand">
-          <span class="site-footer__logo">LMW Travel</span>
-          <span class="site-footer__tagline">By: Lynn Megan Wijngaard</span>
+          <span class="site-footer__logo" data-i18n="common.brand">LMW Travel</span>
+          <span class="site-footer__tagline" data-i18n="common.byLine">By: Lynn Megan Wijngaard</span>
         </div>
         <nav class="site-footer__links" aria-label="Footer navigation">
-          <a href="index.html" class="site-footer__link">Home</a>
-          <a href="about.html" class="site-footer__link">About</a>
-          <a href="whatido.html" class="site-footer__link">What&nbsp;I&nbsp;Do</a>
-          <a href="contact.html" class="site-footer__link">Contact</a>
+          <a href="index.html" class="site-footer__link" data-i18n="footer.home">Home</a>
+          <a href="about.html" class="site-footer__link" data-i18n="footer.about">About</a>
+          <a href="whatido.html" class="site-footer__link" data-i18n="footer.whatido">What&nbsp;I&nbsp;Do</a>
+          <a href="contact.html" class="site-footer__link" data-i18n="footer.contact">Contact</a>
         </nav>
       </div>
       <div class="site-footer__bottom">
-        <span class="site-footer__copy">&copy; 2026 LMW Travel. All rights reserved.</span>
+        <span class="site-footer__copy" data-i18n="footer.copyright">&copy; 2026 LMW Travel. All rights reserved.</span>
         <div class="site-footer__social">
-          <a href="https://www.instagram.com/lynn_lmwtravel/" target="_blank" rel="noopener noreferrer" class="site-footer__social-link" aria-label="Instagram">Instagram</a>
-          <a href="https://www.linkedin.com/in/lynn-megan-wijngaard-82597711a/" target="_blank" rel="noopener noreferrer" class="site-footer__social-link" aria-label="LinkedIn">LinkedIn</a>
-          <a href="https://wa.me/351913564962?text=Hi%20Lynn%2C%20I%E2%80%99d%20love%20some%20help%20planning%20my%20next%20trip%20%E2%80%94%20looking%20forward%20to%20hearing%20from%20you!" target="_blank" rel="noopener noreferrer" class="site-footer__social-link" aria-label="WhatsApp">WhatsApp</a>
+          <a href="https://www.instagram.com/lynn_lmwtravel/" target="_blank" rel="noopener noreferrer" class="site-footer__social-link" aria-label="Instagram" data-i18n="social.instagram" data-i18n-attr="aria-label:social.instagram">Instagram</a>
+          <a href="https://www.linkedin.com/in/lynn-megan-wijngaard-82597711a/" target="_blank" rel="noopener noreferrer" class="site-footer__social-link" aria-label="LinkedIn" data-i18n="social.linkedin" data-i18n-attr="aria-label:social.linkedin">LinkedIn</a>
+          <a href="https://wa.me/351913564962?text=Hi%20Lynn%2C%20I%E2%80%99d%20love%20some%20help%20planning%20my%20next%20trip%20%E2%80%94%20looking%20forward%20to%20hearing%20from%20you!" target="_blank" rel="noopener noreferrer" class="site-footer__social-link" aria-label="WhatsApp" data-i18n="social.whatsapp" data-i18n-attr="aria-label:social.whatsapp">WhatsApp</a>
         </div>
       </div>
       <div class="site-footer__credit">
-        <span class="site-footer__credit-text">Developed by <a href="https://www.cutstudios.pt" target="_blank" rel="noopener noreferrer" class="site-footer__credit-link" aria-label="Cut Studios"><span class="site-footer__cut-logo" aria-hidden="true"></span>Cut Studios</a></span>
+        <span class="site-footer__credit-text"><span data-i18n="footer.developedBy">Developed by</span> <a href="https://www.cutstudios.pt" target="_blank" rel="noopener noreferrer" class="site-footer__credit-link" aria-label="Cut Studios"><span class="site-footer__cut-logo" aria-hidden="true"></span>Cut Studios</a></span>
       </div>
     </div>
   </footer>
 
   <!-- ======== Back to Top ======== -->
-  <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top">
+  <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top" data-i18n-attr="aria-label:a11y.backToTop">
     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
       <path d="M7 12V2"/>
       <path d="M2 6l5-5 5 5"/>

@@ -196,14 +196,26 @@
   background-color: var(--color-ink);
 }
 
+.wid-intro--image {
+  padding: clamp(5rem, 10vw, 7.5rem) var(--space-md);
+}
+
 @media (min-width: 768px) {
   .wid-intro {
     padding: var(--space-2xl) var(--space-lg);
+  }
+
+  .wid-intro--image {
+    padding: clamp(5.5rem, 9vw, 8rem) var(--space-lg);
   }
 }
 
 @media (min-width: 1024px) {
   .wid-intro {
+    padding: 8rem var(--space-xl);
+  }
+
+  .wid-intro--image {
     padding: 8rem var(--space-xl);
   }
 }
@@ -212,9 +224,38 @@
   .wid-intro {
     padding: 8rem var(--space-2xl);
   }
+
+  .wid-intro--image {
+    padding: 8rem var(--space-2xl);
+  }
+}
+
+.wid-intro__bg,
+.wid-intro__overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.wid-intro__bg {
+  background-image: url('../assets/images/image00072.jpeg');
+  background-size: cover;
+  background-position: center 55%;
+  background-repeat: no-repeat;
+  transform: scale(1.02);
+}
+
+.wid-intro__overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(26, 23, 19, 0.78) 0%,
+    rgba(26, 23, 19, 0.72) 45%,
+    rgba(26, 23, 19, 0.86) 100%
+  );
 }
 
 .wid-intro__inner {
+  position: relative;
+  z-index: 1;
   max-width: 52rem;
   margin: 0 auto;
   text-align: center;
@@ -272,10 +313,12 @@
 }
 
 /* ==========================================================================
-   Services Grid — full-width cinematic background
+   Specialties — cards
+   Desktop: 2-row editorial grid
+   Mobile: swipeable scroll-snap carousel
    ========================================================================== */
 
-.wid-services {
+.wid-specialties {
   position: relative;
   width: 100%;
   padding: var(--space-2xl) var(--space-md);
@@ -283,68 +326,40 @@
   background-color: var(--color-ink);
 }
 
-.wid-services__bg {
-  position: absolute;
-  inset: 0;
-  background-image: url('../assets/images/Lynn Final Photos-17.jpg');
-  background-size: cover;
-  background-position: center 25%;
-  background-repeat: no-repeat;
-}
-
-.wid-services__overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(26, 23, 19, 0.86) 0%,
-    rgba(26, 23, 19, 0.76) 35%,
-    rgba(26, 23, 19, 0.80) 70%,
-    rgba(26, 23, 19, 0.92) 100%
-  );
-}
-
 @media (min-width: 768px) {
-  .wid-services {
+  .wid-specialties {
     padding: var(--space-2xl) var(--space-lg);
   }
 }
 
 @media (min-width: 1024px) {
-  .wid-services {
+  .wid-specialties {
     padding: 8rem var(--space-xl);
   }
 }
 
 @media (min-width: 1440px) {
-  .wid-services {
+  .wid-specialties {
     padding: 8rem var(--space-2xl);
   }
 }
 
-.wid-services__inner {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-.wid-services__header {
+.wid-specialties__inner {
+  max-width: 52rem;
+  margin: 0 auto var(--space-lg);
   text-align: center;
-  margin-bottom: var(--space-lg);
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.8s var(--ease-entrance),
               transform 0.9s var(--ease-entrance);
 }
 
-.wid-services__header.is-visible {
+.wid-specialties__inner.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-.wid-services__eyebrow {
+.wid-specialties__eyebrow {
   display: block;
   font-family: var(--font-ui);
   font-weight: 300;
@@ -356,251 +371,265 @@
 }
 
 @media (min-width: 768px) {
-  .wid-services__eyebrow {
+  .wid-specialties__eyebrow {
     font-size: 0.78rem;
   }
 }
 
-.wid-services__heading {
+.wid-specialties__heading {
   font-family: var(--font-brand);
   font-weight: 500;
   font-size: clamp(1.6rem, 4vw, 2.6rem);
   line-height: 1.15;
   letter-spacing: 0.02em;
   color: var(--color-cream);
-  margin-bottom: 0;
+  margin-bottom: var(--space-sm);
 }
 
-@media (min-width: 1440px) {
-  .wid-services__heading {
-    font-size: clamp(2rem, 3vw, 3.2rem);
-  }
+.wid-specialties__subhead {
+  font-family: var(--font-ui);
+  font-weight: 300;
+  font-size: clamp(0.95rem, 1.3vw, 1.05rem);
+  line-height: 1.75;
+  color: var(--color-cream-72);
+  max-width: 56ch;
+  margin: 0 auto;
 }
 
-/* ---- Specialities carousel ---- */
-
-.wid-specialities {
-  position: relative;
+.wid-specialties__line {
+  width: 40px;
+  height: 1px;
+  background: var(--color-cream-20);
+  margin: var(--space-md) auto 0;
 }
 
-.wid-specialities__track {
-  display: flex;
-  gap: clamp(0.75rem, 2.2vw, var(--space-lg));
+/* ---- Carousel wrapper (mobile/tablet) ---- */
+
+.wid-specialties__carousel {
+  width: 100%;
+}
+
+/* ---- Track ---- */
+
+.wid-specialties__track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(260px, 82vw);
+  gap: var(--space-sm);
   overflow-x: auto;
-  padding: 0.25rem 0.25rem 0.9rem;
+  padding: 0 var(--space-md) var(--space-md);
+  margin-left: calc(-1 * var(--space-md));
+  margin-right: calc(-1 * var(--space-md));
   scroll-snap-type: x mandatory;
-  scroll-padding: 0.25rem;
+  scroll-padding-left: var(--space-md);
   -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
+  scrollbar-width: none; /* Firefox */
 }
 
-.wid-specialities__track::-webkit-scrollbar {
+.wid-specialties__track::-webkit-scrollbar {
   display: none;
 }
 
-/* Card sizing: one-at-a-time on mobile, more visible on desktop */
-.wid-specialities__track .wid-card {
-  flex: 0 0 82%;
-  max-width: 520px;
-  scroll-snap-align: center;
-}
+/* ---- Pagination dots ---- */
 
-@media (min-width: 520px) {
-  .wid-specialities__track .wid-card {
-    flex-basis: 62%;
-  }
-}
-
-@media (min-width: 768px) {
-  .wid-specialities__track {
-    padding: 0.25rem 0.5rem 1.1rem;
-  }
-
-  .wid-specialities__track .wid-card {
-    flex-basis: 44%;
-    scroll-snap-align: start;
-  }
-}
-
-@media (min-width: 1024px) {
-  .wid-specialities__track .wid-card {
-    flex-basis: 31%;
-  }
-}
-
-.wid-specialities__indicators {
+.wid-specialties__pagination {
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 0.55rem;
+  gap: 10px;
   margin-top: var(--space-md);
 }
 
-.wid-specialities__indicator {
-  width: 5px;
-  height: 5px;
-  border-radius: 999px;
-  background: rgba(246, 233, 207, 0.22);
-  transition: width 0.35s var(--ease-entrance),
-              background 0.35s var(--ease-luxury);
-}
-
-.wid-specialities__indicator--active {
-  width: 22px;
-  background: rgba(246, 233, 207, 0.6);
-}
-
-/* ---- Service card — speciality (subtle image + separate title) ---- */
-
-.wid-card {
-  position: relative;
+.wid-specialties__cta {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  margin-top: var(--space-lg);
   opacity: 0;
-  transform: translateY(40px);
+  transform: translateY(30px);
   transition: opacity 0.8s var(--ease-entrance),
-              transform 0.9s var(--ease-entrance),
-              border-color 0.6s var(--ease-luxury),
-              box-shadow 0.6s var(--ease-luxury);
+              transform 0.9s var(--ease-entrance);
 }
 
-.wid-card.is-visible {
+.wid-specialties__cta.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-.wid-card--speciality {
-  width: 100%;
-  overflow: hidden;
-  border-radius: clamp(10px, 1.8vw, 16px);
-  border: 1px solid var(--color-cream-12);
-  background: rgba(114, 105, 89, 0.12);
-  box-shadow:
-    0 4px 30px rgba(0, 0, 0, 0.15),
-    0 1px 6px rgba(0, 0, 0, 0.08);
+.wid-specialties__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  border: 1px solid rgba(246, 233, 207, 0.28);
+  background: rgba(246, 233, 207, 0.12);
+  cursor: pointer;
+  transition: transform 0.2s var(--ease-luxury),
+              background 0.2s var(--ease-luxury),
+              border-color 0.2s var(--ease-luxury);
 }
 
-.wid-card--speciality .wid-card__media {
+.wid-specialties__dot[aria-current="true"] {
+  background: rgba(246, 233, 207, 0.5);
+  border-color: rgba(246, 233, 207, 0.55);
+  transform: scale(1.2);
+}
+
+@media (min-width: 768px) {
+  .wid-specialties__track {
+    grid-auto-columns: minmax(320px, 46vw);
+    gap: var(--space-md);
+    padding: 0 var(--space-lg) var(--space-lg);
+    margin-left: calc(-1 * var(--space-lg));
+    margin-right: calc(-1 * var(--space-lg));
+    scroll-padding-left: var(--space-lg);
+  }
+
+  .wid-specialties__pagination {
+    margin-top: var(--space-lg);
+  }
+
+  .wid-specialties__cta {
+    margin-top: var(--space-xl);
+  }
+}
+
+@media (min-width: 1024px) {
+  .wid-specialties__track {
+    display: grid;
+    grid-auto-flow: unset;
+    grid-auto-columns: unset;
+    overflow: visible;
+    padding: 0;
+    margin: 0;
+    scroll-snap-type: none;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--space-lg);
+  }
+
+  .wid-specialties__pagination {
+    display: none;
+  }
+}
+
+/* ---- Card ---- */
+
+.wid-spec-card {
+  scroll-snap-align: start;
   position: relative;
-  width: 100%;
-  aspect-ratio: 4 / 3;
+  border-radius: clamp(14px, 2vw, 18px);
   overflow: hidden;
-  background: var(--color-ink);
+  border: 1px solid var(--color-cream-12);
+  background: rgba(114, 105, 89, 0.08);
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s var(--ease-entrance),
+              transform 0.9s var(--ease-entrance),
+              border-color 0.35s var(--ease-luxury),
+              background 0.35s var(--ease-luxury);
 }
 
-.wid-card--speciality .wid-card__media img {
+.wid-spec-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@supports (backdrop-filter: blur(1px)) {
+  .wid-spec-card {
+    backdrop-filter: blur(10px) saturate(130%);
+    -webkit-backdrop-filter: blur(10px) saturate(130%);
+  }
+}
+
+@media (hover: hover) {
+  .wid-spec-card:hover {
+    border-color: var(--color-cream-20);
+    background: rgba(114, 105, 89, 0.14);
+    transform: translateY(-4px);
+  }
+}
+
+.wid-spec-card__media {
+  position: relative;
+  height: 190px;
+  overflow: hidden;
+  background: rgba(26, 23, 19, 0.25);
+}
+
+.wid-spec-card__media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
-  filter: saturate(0.85) contrast(0.98) brightness(0.92);
-  transform: translateZ(0);
+  transform: scale(1.02);
+  transition: transform 0.6s var(--ease-luxury);
 }
 
-.wid-card__media-overlay {
+.wid-spec-card--honeymoon .wid-spec-card__media img {
+  /* Nudge framing down to show more bed */
+  object-position: center 68%;
+}
+
+.wid-spec-card--business .wid-spec-card__media img {
+  /* Nudge framing down to show more buildings */
+  object-position: center 70%;
+}
+
+@media (hover: hover) {
+  .wid-spec-card:hover .wid-spec-card__media img {
+    transform: scale(1.06);
+  }
+}
+
+.wid-spec-card__media::after {
+  content: '';
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(26, 23, 19, 0.08) 0%,
-    rgba(26, 23, 19, 0.22) 100%
+    rgba(26, 23, 19, 0.12) 0%,
+    rgba(26, 23, 19, 0.55) 100%
   );
-  opacity: 0.85;
-  transition: opacity 0.6s var(--ease-luxury);
   pointer-events: none;
 }
 
-.wid-card--speciality .wid-card__content {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: var(--space-md) var(--space-sm);
+.wid-spec-card__content {
+  padding: var(--space-md) var(--space-md) var(--space-lg);
 }
 
-@media (min-width: 768px) {
-  .wid-card--speciality .wid-card__content {
-    padding: var(--space-lg) var(--space-md);
-  }
-}
-
-.wid-card--speciality .wid-card__title {
-  margin: 0;
+.wid-spec-card__title {
   font-family: var(--font-brand);
   font-weight: 500;
-  font-size: clamp(0.85rem, 2.4vw, 1.1rem);
-  line-height: 1.2;
-  letter-spacing: 0.15em;
-  text-indent: 0.15em;
+  font-size: 1.05rem;
   text-transform: uppercase;
-  color: var(--color-cream-75);
-  transition: color 0.4s ease,
-              transform 0.5s var(--ease-entrance);
+  letter-spacing: 0.12em;
+  text-indent: 0.12em;
+  color: var(--color-cream);
+  margin-bottom: 0.55rem;
 }
 
-.wid-card__phrase {
-  margin-top: 0.55rem;
+.wid-spec-card__desc {
   font-family: var(--font-ui);
   font-weight: 300;
-  font-size: clamp(0.9rem, 1.7vw, 1rem);
-  line-height: 1.6;
+  font-size: 0.98rem;
+  line-height: 1.75;
   color: var(--color-cream-72);
-  max-width: 36ch;
+  margin: 0;
 }
 
-.wid-card--speciality .wid-card__line {
-  width: 24px;
-  height: 1px;
-  margin: var(--space-sm) 0 0;
-  background: rgba(246, 233, 207, 0.18);
-  transition: width 0.6s var(--ease-entrance),
-              background 0.6s var(--ease-luxury);
+@media (min-width: 1024px) {
+  .wid-spec-card__media {
+    height: 280px;
+  }
+
+  /* Editorial layout: 3 cards top row, 3 cards bottom row */
+  .wid-spec-card:nth-child(1),
+  .wid-spec-card:nth-child(2),
+  .wid-spec-card:nth-child(3) {
+    grid-column: span 4;
+  }
+
+  .wid-spec-card:nth-child(4),
+  .wid-spec-card:nth-child(5),
+  .wid-spec-card:nth-child(6) { grid-column: span 4; }
 }
-
-@media (hover: hover) {
-  .wid-card--speciality:hover {
-    border-color: rgba(246, 233, 207, 0.18);
-    box-shadow:
-      0 8px 50px rgba(0, 0, 0, 0.3),
-      0 2px 15px rgba(0, 0, 0, 0.12);
-  }
-
-  .wid-card--speciality:hover .wid-card__media-overlay {
-    opacity: 1;
-  }
-
-  .wid-card--speciality:hover .wid-card__title {
-    color: var(--color-cream);
-    transform: translateY(-3px);
-  }
-
-  .wid-card--speciality:hover .wid-card__line {
-    width: 44px;
-    background: rgba(246, 233, 207, 0.4);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .wid-card__media-overlay,
-  .wid-card--speciality .wid-card__title,
-  .wid-card--speciality .wid-card__line {
-    transition-duration: 0.01ms !important;
-  }
-
-  .wid-card--speciality:hover .wid-card__title {
-    transform: none !important;
-  }
-}
-
-/* Stagger card entrance delays */
-.wid-specialities__track .wid-card:nth-child(1) { transition-delay: 0s; }
-.wid-specialities__track .wid-card:nth-child(2) { transition-delay: 0.08s; }
-.wid-specialities__track .wid-card:nth-child(3) { transition-delay: 0.16s; }
-.wid-specialities__track .wid-card:nth-child(4) { transition-delay: 0.24s; }
-.wid-specialities__track .wid-card:nth-child(5) { transition-delay: 0.32s; }
-.wid-specialities__track .wid-card:nth-child(6) { transition-delay: 0.4s; }
 
 /* ==========================================================================
    Process — "How It Works" — full-width timeline
