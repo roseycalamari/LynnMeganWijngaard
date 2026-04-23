@@ -112,7 +112,7 @@
   function loadDictionary() {
     // Cache-bust to avoid stale translations after deploys/edits.
     // The file remains cacheable by the browser, but this ensures updates are picked up.
-    var v = '20260422';
+    var v = '20260423';
     return fetch('i18n/translations.json?v=' + v, { cache: 'no-cache' })
       .then(function (res) {
         if (!res.ok) throw new Error('Failed to load translations.json');

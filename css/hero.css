@@ -250,3 +250,55 @@
   pointer-events: none;
 }
 
+/* ---- Home: local SEO intro (under hero) ---- */
+
+.index-local {
+  padding: 3.5rem var(--space-md) 4.5rem;
+  background: var(--color-ink);
+  border-top: 1px solid rgba(245, 240, 232, 0.08);
+}
+
+.index-local__inner {
+  max-width: 38rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.index-local__eyebrow {
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-cream-50);
+  margin: 0 0 1rem;
+}
+
+.index-local__heading {
+  font-family: var(--font-brand);
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--color-cream);
+  margin: 0 0 1.25rem;
+}
+
+.index-local__body {
+  font-family: var(--font-ui);
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--color-cream-65);
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .index-local {
+    padding: 4.5rem var(--space-lg) 5.5rem;
+  }
+
+  .index-local__inner {
+    max-width: 40rem;
+  }
+}
+

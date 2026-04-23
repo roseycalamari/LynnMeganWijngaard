@@ -1,0 +1,5 @@
+# LMW Travel — allow indexing
+User-agent: *
+Allow: /
+
+Sitemap: https://lmwtravel.com/sitemap.xml
