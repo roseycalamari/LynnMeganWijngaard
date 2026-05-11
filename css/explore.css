@@ -13,26 +13,51 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background:
-    linear-gradient(
-      rgba(26, 23, 19, 0.30),
-      rgba(26, 23, 19, 0.30)
-    ),
-    url("../assets/images/background%20off%20canvas%20mnue%202.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  /* Background lives on .page-backdrop (index) so it stays fixed during loader → gallery */
+  background: none;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+  transform: translateY(0);
   transition: opacity 0.7s var(--ease-luxury),
-              visibility 0.7s var(--ease-luxury);
+              visibility 0.7s var(--ease-luxury),
+              transform 0.85s var(--ease-entrance);
 }
 
 .explore-active .explore-gallery {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
+}
+
+/* Index landing: keep gallery (and cards) hidden until loader UI has finished exiting */
+body[data-explore-default-open].explore-active:not(.loader-done) .explore-gallery {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(28px);
+}
+
+body[data-explore-default-open].explore-active:not(.loader-done) .explore-gallery .explore-card {
+  opacity: 0;
+  transform: translateY(40px);
+  transition-delay: 0s !important;
+}
+
+body[data-explore-default-open].explore-active:not(.loader-done) .explore-gallery__indicators {
+  opacity: 0;
+  transform: translateY(8px);
+  transition-delay: 0s !important;
+}
+
+body[data-explore-default-open].explore-active:not(.loader-done) .explore-gallery__tagline {
+  opacity: 0;
+  transform: translateY(6px);
+  transition-delay: 0s !important;
+}
+
+body[data-explore-default-open].loader-done.explore-active .explore-gallery {
+  transform: translateY(0);
 }
 
 /* ---- Centering Wrapper ---- */

@@ -54,11 +54,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <!-- Fallback: show hero + header immediately and hide loader if JS is disabled -->
-  <noscript><style>.hero{opacity:1!important}.header{visibility:visible!important}.loader{display:none!important}</style></noscript>
+  <noscript><style>.hero{opacity:1!important}.header{visibility:visible!important}.loader{display:none!important}body[data-explore-default-open] .explore-gallery{opacity:1!important;visibility:visible!important;pointer-events:auto!important;transform:none!important}body[data-explore-default-open].explore-active .explore-card{opacity:1!important;transform:none!important}body[data-explore-default-open] .explore-gallery__indicators,body[data-explore-default-open] .explore-gallery__tagline{opacity:1!important;transform:none!important}</style></noscript>
 
   <script src="js/i18n.js" defer></script>
 </head>
 <body class="explore-active" data-explore-default-open>
+
+  <!-- Full-viewport backdrop: same image as explore; stays fixed while loader UI exits and gallery enters -->
+  <div class="page-backdrop" aria-hidden="true"></div>
 
   <!-- ======== Loading Screen ======== -->
   <div class="loader" id="loader" aria-live="polite" aria-label="Loading" data-i18n-attr="aria-label:a11y.loading">

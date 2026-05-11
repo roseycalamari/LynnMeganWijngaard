@@ -3,6 +3,24 @@
    Full-viewport loader with branded logo, progress bar, and smooth reveal.
    ========================================================================== */
 
+/* ---- Shared backdrop (index): continuous with explore gallery bg ---- */
+
+.page-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      rgba(26, 23, 19, 0.30),
+      rgba(26, 23, 19, 0.30)
+    ),
+    url('../assets/images/background off canvas mnue 2.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 /* ---- Loader Shell ---- */
 
 .loader {
@@ -12,7 +30,7 @@
   pointer-events: none;
 }
 
-/* ---- Curtain (the visual background that rises away) ---- */
+/* ---- Curtain (centers loader UI; bg lives on .page-backdrop so it stays fixed) ---- */
 
 .loader__curtain {
   position: absolute;
@@ -21,25 +39,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--color-stone);
-  background-image: url('../assets/images/background off canvas mnue 2.png');
-  background-size: cover;
-  background-position: center;
+  background: transparent;
   overflow: hidden;
   pointer-events: auto;
-}
-
-/* Subtle vignette overlay for depth */
-.loader__curtain::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    ellipse 80% 70% at 50% 50%,
-    transparent 0%,
-    rgba(26, 23, 19, 0.25) 100%
-  );
-  pointer-events: none;
 }
 
 /* ---- Centered Content ---- */
@@ -163,10 +165,6 @@
   animation: loaderContentLift 0.7s cubic-bezier(0.45, 0, 0.15, 1) forwards;
 }
 
-.loader--leaving .loader__curtain {
-  animation: loaderCurtainRise 0.9s cubic-bezier(0.76, 0, 0.24, 1) 0.4s forwards;
-}
-
 /* ---- Keyframes ---- */
 
 @keyframes loaderFadeUp {
@@ -191,15 +189,6 @@
   }
 }
 
-@keyframes loaderCurtainRise {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-100%);
-  }
-}
-
 /* ---- Reduced Motion ---- */
 
 @media (prefers-reduced-motion: reduce) {
@@ -215,10 +204,6 @@
     animation-duration: 0.01ms !important;
   }
 
-  .loader--leaving .loader__curtain {
-    animation-duration: 0.01ms !important;
-    animation-delay: 0ms !important;
-  }
 }
 
 /* ---- Hidden state (after removal) ---- */

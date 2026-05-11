@@ -9,6 +9,7 @@
 
   var loader  = document.getElementById('loader');
   var curtain = loader && loader.querySelector('.loader__curtain');
+  var content = loader && loader.querySelector('.loader__content');
   var bar     = document.getElementById('loader-bar');
   var hero    = document.querySelector('.hero');
   var header  = document.querySelector('.header');
@@ -92,16 +93,19 @@
   function exit() {
     loader.classList.add('loader--leaving');
 
-    /* Reveal the site as the curtain starts to rise (0.4s delay in CSS) */
-    setTimeout(function () {
+    function revealSite() {
+      document.body.classList.add('loader-done');
       if (hero) hero.classList.add('hero--ready');
       if (header) header.classList.add('header--ready');
-    }, 350);
-
-    curtain.addEventListener('animationend', function handler(e) {
-      if (e.target !== curtain) return;
-      curtain.removeEventListener('animationend', handler);
       loader.classList.add('loader--done');
+    }
+
+    /* Backdrop stays fixed; curtain no longer animates — wait for loader UI exit, then slide gallery in */
+    var exitTarget = content || curtain;
+    exitTarget.addEventListener('animationend', function onExitAnim(e) {
+      if (e.target !== exitTarget) return;
+      exitTarget.removeEventListener('animationend', onExitAnim);
+      revealSite();
     });
   }
 })();
