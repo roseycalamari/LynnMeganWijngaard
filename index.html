@@ -48,10 +48,12 @@
   <link rel="stylesheet" href="css/nav-overlay.css">
   <link rel="stylesheet" href="css/hero.css">
   <link rel="stylesheet" href="css/explore.css">
+  <link rel="stylesheet" href="css/prank-cut-sticker.css">
 
   <!-- Preconnect for Google Fonts performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
 
   <!-- Fallback: show hero + header immediately and hide loader if JS is disabled -->
   <noscript><style>.hero{opacity:1!important}.header{visibility:visible!important}.loader{display:none!important}</style></noscript>
@@ -69,6 +71,25 @@
         <div class="loader__bar-wrap">
           <div class="loader__bar-fill" id="loader-bar"></div>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Prank overlay (index only) — comic / BD-style thought bubble -->
+  <div class="cut-prank-sticker" aria-hidden="true">
+    <div class="cut-prank-sticker__shell">
+      <div class="cut-prank-sticker__blob">
+        <div class="cut-prank-sticker__blob-halftone"></div>
+        <div class="cut-prank-sticker__content">
+          <img class="cut-prank-sticker__logo" src="assets/images/logo%20normal%20no%20background.png" alt="" decoding="async" />
+          <p class="cut-prank-sticker__line1">Created by</p>
+          <p class="cut-prank-sticker__line2">Cut Studios</p>
+        </div>
+      </div>
+      <div class="cut-prank-sticker__thought-chain">
+        <span class="cut-prank-sticker__thought-bubble cut-prank-sticker__thought-bubble--a"></span>
+        <span class="cut-prank-sticker__thought-bubble cut-prank-sticker__thought-bubble--b"></span>
+        <span class="cut-prank-sticker__thought-bubble cut-prank-sticker__thought-bubble--c"></span>
       </div>
     </div>
   </div>
