@@ -2,6 +2,16 @@
    LMW Travel — CSS Reset & Base Normalization
    ========================================================================== */
 
+/* Off-canvas shell: keep hidden until nav-overlay.css paints (avoids a flash on fast navigations e.g. Discover) */
+#nav-overlay:not(.nav-overlay--open) {
+  position: fixed;
+  inset: 0;
+  z-index: 105;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
 *,
 *::before,
 *::after {
