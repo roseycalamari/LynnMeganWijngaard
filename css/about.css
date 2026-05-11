@@ -32,6 +32,8 @@
   background-position: center 30%;
   background-repeat: no-repeat;
   animation: kenBurns 22s var(--ease-luxury) forwards;
+  opacity: 0;
+  transition: opacity 1.85s var(--ease-luxury);
 }
 
 .about-hero__overlay {
@@ -50,6 +52,13 @@
       rgba(26, 23, 19, 0.75) 70%,
       var(--color-ink) 100%
     );
+  opacity: 0;
+  transition: opacity 1.85s var(--ease-luxury);
+}
+
+.about-hero--ready .about-hero__image,
+.about-hero--ready .about-hero__overlay {
+  opacity: 1;
 }
 
 .about-hero__content {

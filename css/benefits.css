@@ -33,6 +33,8 @@
   background-position: center;
   background-repeat: no-repeat;
   animation: kenBurns 22s var(--ease-luxury) forwards;
+  opacity: 0;
+  transition: opacity 1.85s var(--ease-luxury);
 }
 
 .benefits-hero__overlay {
@@ -51,6 +53,13 @@
       rgba(26, 23, 19, 0.75) 70%,
       var(--color-ink) 100%
     );
+  opacity: 0;
+  transition: opacity 1.85s var(--ease-luxury);
+}
+
+.benefits-hero--ready .benefits-hero__image,
+.benefits-hero--ready .benefits-hero__overlay {
+  opacity: 1;
 }
 
 .benefits-hero__content {

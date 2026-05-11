@@ -61,7 +61,12 @@
   pointer-events: none;
   z-index: 109;
   opacity: 0;
-  animation: fadeIn var(--dur-mid) var(--ease-entrance) 0.3s forwards;
+  animation: none;
+}
+
+/* Run only after reveal (fixes loader pages where animations finished while hidden) */
+.header--ready .header__notch-wrap {
+  animation: fadeIn 0.62s var(--ease-entrance) 0.06s forwards;
 }
 
 @media (min-width: 1024px) {
@@ -103,7 +108,11 @@
   transition: background var(--dur-fast) var(--ease-luxury),
               border-color var(--dur-fast) var(--ease-luxury);
   opacity: 0;
-  animation: fadeIn var(--dur-mid) var(--ease-entrance) 0.5s forwards;
+  animation: none;
+}
+
+.header--ready .header__contact {
+  animation: fadeIn 0.72s var(--ease-entrance) 0.2s forwards;
 }
 
 @supports (backdrop-filter: blur(1px)) {
@@ -211,7 +220,12 @@
   text-decoration: none;
   background: none;
   opacity: 0;
-  animation: notchDrop var(--dur-slow) var(--ease-entrance) 0.3s forwards;
+  transform: translateY(-100%);
+  animation: none;
+}
+
+.header--ready .header__notch {
+  animation: notchDrop 1.05s var(--ease-entrance) 0.12s forwards;
 }
 
 @media (min-width: 1024px) {
@@ -267,7 +281,11 @@
   transition: background var(--dur-fast) var(--ease-luxury),
               border-color var(--dur-fast) var(--ease-luxury);
   opacity: 0;
-  animation: fadeIn var(--dur-mid) var(--ease-entrance) 0.5s forwards;
+  animation: none;
+}
+
+.header--ready .hamburger {
+  animation: fadeIn 0.72s var(--ease-entrance) 0.28s forwards;
 }
 
 @supports (backdrop-filter: blur(1px)) {

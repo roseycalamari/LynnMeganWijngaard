@@ -54,7 +54,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <!-- Fallback: show hero + header immediately and hide loader if JS is disabled -->
-  <noscript><style>.hero{opacity:1!important}.header{visibility:visible!important}.loader{display:none!important}body[data-explore-default-open] .explore-gallery{opacity:1!important;visibility:visible!important;pointer-events:auto!important;transform:none!important}body[data-explore-default-open].explore-active .explore-card{opacity:1!important;transform:none!important}body[data-explore-default-open] .explore-gallery__indicators,body[data-explore-default-open] .explore-gallery__tagline{opacity:1!important;transform:none!important}</style></noscript>
+  <noscript><style>.hero{opacity:1!important}.header{visibility:visible!important}.loader{display:none!important}body[data-explore-default-open] .explore-gallery{opacity:1!important;visibility:visible!important;pointer-events:auto!important;transform:none!important}body[data-explore-default-open].explore-active .explore-card{opacity:1!important;transform:none!important}body[data-explore-default-open] .explore-gallery__indicators,body[data-explore-default-open] .explore-gallery__tagline,body[data-explore-default-open] .explore-gallery__socials{opacity:1!important;transform:none!important}.header__notch-wrap,.header__contact,.header__notch,.hamburger{opacity:1!important;transform:none!important;animation:none!important}</style></noscript>
 
   <script src="js/i18n.js" defer></script>
 </head>
@@ -166,6 +166,13 @@
           <a href="contact.html" class="nav-overlay__link" data-photo="4" data-i18n="nav.contact">Contact</a>
         </nav>
       </div>
+
+      <nav class="nav-overlay__social-block nav-overlay__social-block--mobile" aria-label="Social links" data-i18n-attr="aria-label:nav.socialAria">
+        <a href="https://www.linkedin.com/in/lynn-megan-wijngaard-82597711a/" target="_blank" rel="noopener noreferrer" class="nav-overlay__social-link" data-i18n="social.linkedin" data-i18n-attr="aria-label:social.linkedin">LinkedIn</a>
+        <a href="https://wa.me/351913564962?text=Hi%20Lynn%2C%20I%E2%80%99d%20love%20some%20help%20planning%20my%20next%20trip%20%E2%80%94%20looking%20forward%20to%20hearing%20from%20you!" target="_blank" rel="noopener noreferrer" class="nav-overlay__social-link" data-i18n="social.whatsapp" data-i18n-attr="aria-label:social.whatsapp">WhatsApp</a>
+        <a href="https://www.instagram.com/lynn_lmwtravel/" target="_blank" rel="noopener noreferrer" class="nav-overlay__social-link" data-i18n="social.instagram" data-i18n-attr="aria-label:social.instagram">Instagram</a>
+      </nav>
+
       <div class="nav-overlay__lang">
         <button class="nav-overlay__lang-btn nav-overlay__lang-btn--active" data-lang="en">EN</button>
         <button class="nav-overlay__lang-btn" data-lang="de">DE</button>
@@ -248,7 +255,17 @@
 
     </div>
 
-    <p class="explore-gallery__tagline" data-i18n="index.explore.tagline">Your Luxury Travel Advisor</p>
+    <div class="explore-gallery__footer">
+      <p class="explore-gallery__tagline" data-i18n="index.explore.tagline">Your Luxury Travel Advisor</p>
+
+      <nav class="explore-gallery__socials" aria-label="Social links" data-i18n-attr="aria-label:index.explore.socialsAria">
+        <a href="https://www.linkedin.com/in/lynn-megan-wijngaard-82597711a/" target="_blank" rel="noopener noreferrer" class="explore-gallery__social-link" data-i18n="social.linkedin">LinkedIn</a>
+        <span class="explore-gallery__social-sep" aria-hidden="true">·</span>
+        <a href="https://wa.me/351913564962?text=Hi%20Lynn%2C%20I%E2%80%99d%20love%20some%20help%20planning%20my%20next%20trip%20%E2%80%94%20looking%20forward%20to%20hearing%20from%20you!" target="_blank" rel="noopener noreferrer" class="explore-gallery__social-link" data-i18n="social.whatsapp">WhatsApp</a>
+        <span class="explore-gallery__social-sep" aria-hidden="true">·</span>
+        <a href="https://www.instagram.com/lynn_lmwtravel/" target="_blank" rel="noopener noreferrer" class="explore-gallery__social-link" data-i18n="social.instagram">Instagram</a>
+      </nav>
+    </div>
   </div>
 
   <!-- ======== Main Content ======== -->

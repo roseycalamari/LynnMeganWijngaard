@@ -101,5 +101,16 @@
   .header__contact {
     opacity: 1 !important;
   }
+
+  .about-hero__image,
+  .about-hero__overlay,
+  .contact-hero__image,
+  .contact-hero__overlay,
+  .wid-hero__image,
+  .wid-hero__overlay,
+  .benefits-hero__image,
+  .benefits-hero__overlay {
+    opacity: 1 !important;
+  }
 }
 
