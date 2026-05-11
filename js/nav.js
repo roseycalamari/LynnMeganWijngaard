@@ -11,6 +11,11 @@
   const header = document.querySelector('.header');
   const hamburger = document.querySelector('.hamburger');
   const overlay = document.querySelector('.nav-overlay');
+  if (!header || !hamburger || !overlay) return;
+
+  /* HTML `hidden` keeps overlay off-screen before any CSS (avoids flash on hard navigations); remove once JS runs and styles apply */
+  overlay.removeAttribute('hidden');
+
   const overlayLinks = overlay.querySelectorAll('.nav-overlay__link');
   const langBtns = overlay.querySelectorAll('.nav-overlay__lang-btn');
 
@@ -161,6 +166,8 @@
   function openMenu() {
     isMenuOpen = true;
     lastFocusedElement = document.activeElement;
+
+    overlay.removeAttribute('hidden');
 
     hamburger.classList.add('hamburger--active');
     hamburger.setAttribute('aria-expanded', 'true');
