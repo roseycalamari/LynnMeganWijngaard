@@ -9,11 +9,20 @@
   position: fixed;
   inset: 0;
   z-index: 50;
+  --explore-track-h: 55vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: rgba(26, 23, 19, 0.15);
+  background:
+    linear-gradient(
+      rgba(26, 23, 19, 0.30),
+      rgba(26, 23, 19, 0.30)
+    ),
+    url("../assets/images/background%20off%20canvas%20mnue%202.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -66,6 +75,10 @@
     max-height: 620px;
     padding: 0 var(--space-md);
   }
+
+  .explore-gallery {
+    --explore-track-h: 62vh;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -74,6 +87,10 @@
     padding: 0 var(--space-lg);
     height: 66vh;
     max-height: 680px;
+  }
+
+  .explore-gallery {
+    --explore-track-h: 66vh;
   }
 }
 
@@ -699,6 +716,40 @@ body:not(.explore-active) .explore-gallery__indicators {
   background: rgba(246, 233, 207, 0.6);
 }
 
+/* ---- Subtle tagline (centered below cards) ---- */
+
+.explore-gallery__tagline {
+  position: fixed;
+  left: 50%;
+  /* Cards are vertically centered in the viewport, so the bottom edge of
+     the cards sits at: 50vh + track_height / 2. The tagline is placed at
+     the midpoint between that edge and the bottom of the screen (100vh),
+     which simplifies to: 75vh + track_height / 4. */
+  top: calc(75vh + var(--explore-track-h) / 4);
+  transform: translate(-50%, -50%);
+  width: min(92vw, 980px);
+  text-align: center;
+  font-family: "Poppins", var(--font-ui);
+  font-weight: 300;
+  font-size: clamp(0.85rem, 1.6vw, 1.05rem);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(246, 233, 207, 0.55);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s var(--ease-entrance);
+}
+
+.explore-active .explore-gallery__tagline {
+  opacity: 1;
+  transition-delay: 0.55s;
+}
+
+body:not(.explore-active) .explore-gallery__tagline {
+  transition-delay: 0s;
+  transition-duration: 0.3s;
+}
+
 /* ---- Go Back Button ---- */
 
 .explore-gallery__back {
@@ -768,6 +819,7 @@ body:not(.explore-active) .explore-gallery__back {
   .explore-gallery {
     justify-content: center;
     padding: 0 0 env(safe-area-inset-bottom, 0px);
+    --explore-track-h: clamp(340px, 56svh, 500px);
   }
 
   .explore-gallery__track {

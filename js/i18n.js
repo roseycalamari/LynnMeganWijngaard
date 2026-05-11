@@ -1,6 +1,6 @@
-/* ==========================================================================
+  /* ==========================================================================
    LMW Travel i18n
-   Client-side translations (en default, pt-PT, nl)
+   Client-side translations (en default, de, nl)
    ========================================================================== */
 
 (function () {
@@ -8,12 +8,11 @@
 
   var STORAGE_KEY = 'lmw_lang';
   var DEFAULT_LANG = 'en';
-  var SUPPORTED = ['en', 'pt-PT', 'nl'];
+  var SUPPORTED = ['en', 'de', 'nl'];
 
   function normalizeLang(lang) {
     if (!lang) return DEFAULT_LANG;
-    if (lang === 'pt') return 'pt-PT';
-    if (lang === 'pt-pt') return 'pt-PT';
+    if (lang === 'de-de') return 'de';
     if (lang === 'nl-nl') return 'nl';
     return lang;
   }
@@ -24,7 +23,7 @@
 
   function getBrowserPreferredLang() {
     var raw = (navigator.language || navigator.userLanguage || DEFAULT_LANG).toLowerCase();
-    if (raw.startsWith('pt')) return 'pt-PT';
+    if (raw.startsWith('de')) return 'de';
     if (raw.startsWith('nl')) return 'nl';
     return 'en';
   }
@@ -64,7 +63,7 @@
     var enDict = dict.en || {};
 
     // Set document language (helps screen readers)
-    document.documentElement.setAttribute('lang', lang === 'pt-PT' ? 'pt-PT' : lang);
+    document.documentElement.setAttribute('lang', lang);
 
     // Text nodes
     var nodes = document.querySelectorAll('[data-i18n]');

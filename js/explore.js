@@ -6,14 +6,17 @@
 (function () {
   'use strict';
 
-  var cta = document.querySelector('.hero__cta');
   var gallery = document.getElementById('explore-gallery');
   var track = document.getElementById('explore-track');
   var backBtn = document.getElementById('explore-back');
   var indicators = document.querySelectorAll('.explore-gallery__indicator');
-  if (!cta || !gallery || !track) return;
+  if (!gallery || !track) return;
 
   var cards = track.querySelectorAll('.explore-card');
+  var defaultOpen = document.body && document.body.hasAttribute('data-explore-default-open');
+  var openTriggers = Array.prototype.slice.call(
+    document.querySelectorAll('.hero__cta, [data-open-explore]')
+  );
 
   /* ---- Open / Close the gallery ---- */
 
@@ -24,18 +27,21 @@
   }
 
   function closeExplore() {
+    if (defaultOpen) return;
     document.body.classList.remove('explore-active');
   }
 
-  /* ---- CTA toggle ---- */
+  /* ---- Open triggers (CTA, logo notch, etc) ---- */
 
-  cta.addEventListener('click', function (e) {
-    e.preventDefault();
-    if (document.body.classList.contains('explore-active')) {
-      closeExplore();
-    } else {
-      openExplore();
-    }
+  openTriggers.forEach(function (trigger) {
+    trigger.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (document.body.classList.contains('explore-active')) {
+        closeExplore();
+      } else {
+        openExplore();
+      }
+    });
   });
 
   /* ---- Go Back button ---- */
@@ -63,6 +69,12 @@
       closeExplore();
     }
   });
+
+  /* ---- Default open (landing state) ---- */
+
+  if (defaultOpen) {
+    openExplore();
+  }
 
   /* ---- Discover button navigation ---- */
 
